@@ -10,7 +10,7 @@ class ComponentSpec: QuickSpec {
 
         describe("constructor injection") {
             it("uses annotated constructor for type instantiation") {
-                let _ = component.parent
+                expect(component.child.parent).notTo(beNil())
             }
         }
     }
@@ -23,12 +23,21 @@ protocol PersonComponent {
     var child: Child { get }
 }
 
-class Parent {
+class Home {
     // sourcery: Inject
     init() {}
 }
 
-class Child {
+class Parent {
     // sourcery: Inject
-    init() {}
+    init(home: Home) {}
+}
+
+class Child {
+    let parent: Parent?
+
+    // sourcery: Inject
+    init(parent: Parent) { self.parent = parent }
+
+    init() { self.parent = nil }
 }

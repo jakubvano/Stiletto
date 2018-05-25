@@ -1,4 +1,13 @@
 // MARK: - Components
+<%
+func constructor(for type: Type?) -> String {
+    guard let type = type, let method = type.methods.filter({ $0.annotations.keys.contains("Inject") }).first else { return "/* No constructor available */" }
+    return type.name + "(" 
+        + method.parameters.map { "\($0.name): \(constructor(for: $0.type))" } .joined(separator: ", ") 
+        + ")"
+}
+%>
+
 <% for type in types.protocols where type.annotations.keys.contains("Component") { %>
 <% let componentName = "Stiletto" + type.name %>
 struct <%= componentName %>: <%= type.name %> {
@@ -8,11 +17,7 @@ struct <%= componentName %>: <%= type.name %> {
 
 <% for variable in type.variables { %>
     var <%= variable.name %>: <%= variable.typeName %> {
-    <% if let variableType = variable.type, let constructor = variableType.methods.filter({ $0.annotations.keys.contains("Inject") }).first { %>
-        return <%= variableType.name %>()
-    <% } else { %>
-        // No init with 'Inject' annotation found
-    <% } %>
+        return <%= constructor(for: variable.type) %>
     }
 <% } %>
 }
