@@ -38,6 +38,7 @@
 		CDD9F52620B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedCode.swift; sourceTree = "<group>"; };
 		CDD9F53820B8619300FBB87F /* ComponentSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentSpec.swift; sourceTree = "<group>"; };
+		CDD9F53A20B8625500FBB87F /* Component.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Component.swifttemplate; sourceTree = "<group>"; };
 		D895D108AA371F00FCA8A9FE /* Pods-Stiletto-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto-Tests/Pods-Stiletto-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +126,7 @@
 		CDD9F53020B85ED500FBB87F /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				CDD9F53A20B8625500FBB87F /* Component.swifttemplate */,
 			);
 			path = Templates;
 			sourceTree = "<group>";

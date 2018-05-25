@@ -1,0 +1,19 @@
+// MARK: - Components
+<% for type in types.protocols where type.annotations.keys.contains("Component") { %>
+<% let componentName = "Stiletto" + type.name %>
+struct <%= componentName %>: <%= type.name %> {
+    static func create() -> <%= componentName %> {
+        return <%= componentName %>()
+    }
+
+<% for variable in type.variables { %>
+    var <%= variable.name %>: <%= variable.typeName %> {
+    <% if let variableType = variable.type, let constructor = variableType.methods.filter({ $0.annotations.keys.contains("Inject") }).first { %>
+        return <%= variableType.name %>()
+    <% } else { %>
+        // No init with 'Inject' annotation found
+    <% } %>
+    }
+<% } %>
+}
+<% } %>
