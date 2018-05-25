@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2795A58EB11CEF254D4640C7 /* Pods_Stiletto_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */; };
+		45454774010319D97AC634D6 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
-		CDD9F52520B85D1100FBB87F /* StilettoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F52420B85D1100FBB87F /* StilettoTests.swift */; };
 		CDD9F52720B85D1100FBB87F /* Stiletto.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD9F51920B85D1100FBB87F /* Stiletto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
+		CDD9F53920B8619300FBB87F /* ComponentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53820B8619300FBB87F /* ComponentSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +26,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10D2F266CE5BB8ADE0AD7D6B /* Pods-Stiletto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto/Pods-Stiletto.release.xcconfig"; sourceTree = "<group>"; };
+		28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stiletto_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F1C0BDFF6262A034F6E3C47 /* Pods-Stiletto-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto-Tests/Pods-Stiletto-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		516F096072858C0B8D51046E /* Pods_Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78724F82253C4635E6632DCB /* Pods-Stiletto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto/Pods-Stiletto.debug.xcconfig"; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51920B85D1100FBB87F /* Stiletto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stiletto.h; sourceTree = "<group>"; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDD9F51F20B85D1100FBB87F /* StilettoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StilettoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDD9F52420B85D1100FBB87F /* StilettoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StilettoTests.swift; sourceTree = "<group>"; };
+		CDD9F51F20B85D1100FBB87F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F52620B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedCode.swift; sourceTree = "<group>"; };
+		CDD9F53820B8619300FBB87F /* ComponentSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentSpec.swift; sourceTree = "<group>"; };
+		D895D108AA371F00FCA8A9FE /* Pods-Stiletto-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto-Tests/Pods-Stiletto-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45454774010319D97AC634D6 /* Pods_Stiletto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +55,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */,
+				2795A58EB11CEF254D4640C7 /* Pods_Stiletto_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2611C8DB79C0994E5529E78D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				516F096072858C0B8D51046E /* Pods_Stiletto.framework */,
+				28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		373CCF53DF902A97F72E4791 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78724F82253C4635E6632DCB /* Pods-Stiletto.debug.xcconfig */,
+				10D2F266CE5BB8ADE0AD7D6B /* Pods-Stiletto.release.xcconfig */,
+				2F1C0BDFF6262A034F6E3C47 /* Pods-Stiletto-Tests.debug.xcconfig */,
+				D895D108AA371F00FCA8A9FE /* Pods-Stiletto-Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CDD9F50C20B85D1100FBB87F = {
 			isa = PBXGroup;
 			children = (
-				CDD9F51820B85D1100FBB87F /* Stiletto */,
-				CDD9F52320B85D1100FBB87F /* StilettoTests */,
+				CDD9F53020B85ED500FBB87F /* Templates */,
+				CDD9F51820B85D1100FBB87F /* Sources */,
+				CDD9F52320B85D1100FBB87F /* Tests */,
 				CDD9F51720B85D1100FBB87F /* Products */,
+				373CCF53DF902A97F72E4791 /* Pods */,
+				2611C8DB79C0994E5529E78D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,27 +98,35 @@
 			isa = PBXGroup;
 			children = (
 				CDD9F51620B85D1100FBB87F /* Stiletto.framework */,
-				CDD9F51F20B85D1100FBB87F /* StilettoTests.xctest */,
+				CDD9F51F20B85D1100FBB87F /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDD9F51820B85D1100FBB87F /* Stiletto */ = {
+		CDD9F51820B85D1100FBB87F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				CDD9F51920B85D1100FBB87F /* Stiletto.h */,
 				CDD9F51A20B85D1100FBB87F /* Info.plist */,
 			);
-			path = Stiletto;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		CDD9F52320B85D1100FBB87F /* StilettoTests */ = {
+		CDD9F52320B85D1100FBB87F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				CDD9F52420B85D1100FBB87F /* StilettoTests.swift */,
+				CDD9F53820B8619300FBB87F /* ComponentSpec.swift */,
+				CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */,
 				CDD9F52620B85D1100FBB87F /* Info.plist */,
 			);
-			path = StilettoTests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CDD9F53020B85ED500FBB87F /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +147,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDD9F52A20B85D1100FBB87F /* Build configuration list for PBXNativeTarget "Stiletto" */;
 			buildPhases = (
+				5825822C82C94E74B79B9424 /* [CP] Check Pods Manifest.lock */,
 				CDD9F51120B85D1100FBB87F /* Sources */,
 				CDD9F51220B85D1100FBB87F /* Frameworks */,
 				CDD9F51320B85D1100FBB87F /* Headers */,
@@ -118,22 +162,25 @@
 			productReference = CDD9F51620B85D1100FBB87F /* Stiletto.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CDD9F51E20B85D1100FBB87F /* StilettoTests */ = {
+		CDD9F51E20B85D1100FBB87F /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDD9F52D20B85D1100FBB87F /* Build configuration list for PBXNativeTarget "StilettoTests" */;
+			buildConfigurationList = CDD9F52D20B85D1100FBB87F /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
+				B12C39AD649CD20DE7B8DC53 /* [CP] Check Pods Manifest.lock */,
+				CDD9F53320B85F2B00FBB87F /* Sourcery */,
 				CDD9F51B20B85D1100FBB87F /* Sources */,
 				CDD9F51C20B85D1100FBB87F /* Frameworks */,
 				CDD9F51D20B85D1100FBB87F /* Resources */,
+				BCC91960B827C9F933CE36FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CDD9F52220B85D1100FBB87F /* PBXTargetDependency */,
 			);
-			name = StilettoTests;
+			name = Tests;
 			productName = StilettoTests;
-			productReference = CDD9F51F20B85D1100FBB87F /* StilettoTests.xctest */;
+			productReference = CDD9F51F20B85D1100FBB87F /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +214,7 @@
 			projectRoot = "";
 			targets = (
 				CDD9F51520B85D1100FBB87F /* Stiletto */,
-				CDD9F51E20B85D1100FBB87F /* StilettoTests */,
+				CDD9F51E20B85D1100FBB87F /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -189,6 +236,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5825822C82C94E74B79B9424 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stiletto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B12C39AD649CD20DE7B8DC53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stiletto-Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCC91960B827C9F933CE36FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Stiletto-Tests/Pods-Stiletto-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stiletto-Tests/Pods-Stiletto-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDD9F53320B85F2B00FBB87F /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery --sources Tests --templates Templates --output Tests/GeneratedCode.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CDD9F51120B85D1100FBB87F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -201,7 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD9F52520B85D1100FBB87F /* StilettoTests.swift in Sources */,
+				CDD9F53920B8619300FBB87F /* ComponentSpec.swift in Sources */,
+				CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +458,7 @@
 		};
 		CDD9F52B20B85D1100FBB87F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78724F82253C4635E6632DCB /* Pods-Stiletto.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -347,7 +469,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Stiletto/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -363,6 +485,7 @@
 		};
 		CDD9F52C20B85D1100FBB87F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D2F266CE5BB8ADE0AD7D6B /* Pods-Stiletto.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -373,7 +496,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Stiletto/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,11 +512,12 @@
 		};
 		CDD9F52E20B85D1100FBB87F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F1C0BDFF6262A034F6E3C47 /* Pods-Stiletto-Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
-				INFOPLIST_FILE = StilettoTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -407,11 +531,12 @@
 		};
 		CDD9F52F20B85D1100FBB87F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D895D108AA371F00FCA8A9FE /* Pods-Stiletto-Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
-				INFOPLIST_FILE = StilettoTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -444,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDD9F52D20B85D1100FBB87F /* Build configuration list for PBXNativeTarget "StilettoTests" */ = {
+		CDD9F52D20B85D1100FBB87F /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDD9F52E20B85D1100FBB87F /* Debug */,

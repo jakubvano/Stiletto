@@ -7,7 +7,20 @@
 		<key>Stiletto.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CDD9F51520B85D1100FBB87F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CDD9F51E20B85D1100FBB87F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

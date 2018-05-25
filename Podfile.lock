@@ -1,0 +1,24 @@
+PODS:
+  - Nimble (7.1.1)
+  - Quick (1.3.0)
+  - Sourcery (0.13.1)
+
+DEPENDENCIES:
+  - Nimble
+  - Quick
+  - Sourcery
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+    - Sourcery
+
+SPEC CHECKSUMS:
+  Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
+  Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
+  Sourcery: 9ef51b8777516f204d82996441f293813158d0d7
+
+PODFILE CHECKSUM: 7c9142ac6a14a977039952ff25c65e1e1b4511d4
+
+COCOAPODS: 1.5.3
