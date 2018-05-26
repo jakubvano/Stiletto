@@ -1,23 +1,39 @@
 // MARK: - Components
 <%
-func constructor(for type: Type?) -> String {
-    guard let type = type, let method = type.methods.filter({ $0.annotations.keys.contains("Inject") }).first else { return "/* No constructor available */" }
+func constructor(for type: Type) -> String {
+    guard let method = type.methods.filter({ $0.annotations.keys.contains("Inject") }).first else { return "/* No constructor available */" }
     return type.name + "(" 
-        + method.parameters.map { "\($0.name): \(constructor(for: $0.type))" } .joined(separator: ", ") 
+        + method.parameters.map { "\($0.name): make\($0.typeName)()" } .joined(separator: ", ") 
         + ")"
 }
 %>
+<%
+func dependencyTypes(for type: Type) -> [Type] {
+    let initParams = type.methods.filter { $0.annotations.keys.contains("Inject") } .first?.parameters ?? []
+    return [type] + initParams.flatMap { $0.type }
+}
+%>
 
-<% for type in types.protocols where type.annotations.keys.contains("Component") { %>
-<% let componentName = "Stiletto" + type.name %>
-struct <%= componentName %>: <%= type.name %> {
-    static func create() -> <%= componentName %> {
-        return <%= componentName %>()
+<% for component in types.protocols where component.annotations.keys.contains("Component") { %>
+<% let implementationName = "Stiletto" + component.name %>
+struct <%= implementationName %>: <%= component.name %> {
+    static func create() -> <%= component.name %> {
+        return <%= implementationName %>()
     }
 
-<% for variable in type.variables { %>
-    var <%= variable.name %>: <%= variable.typeName %> {
-        return <%= constructor(for: variable.type) %>
+<% for variable in component.variables { %>
+    var <%= variable.name %>: <%= variable.typeName %> { return make<%= variable.typeName %>() }
+<% } %>
+
+<% let types = component.variables
+    .flatMap { $0.type }
+    .reduce([]) { $0 + dependencyTypes(for: $1) }
+    .reduce([String: Type]()) { var d = $0; d[$1.name] = $1; return d }
+    .values
+%>
+<% for type in types { %>
+    private func make<%= type.name %>() -> <%= type.name %> {
+        return <%= constructor(for: type)  %>
     }
 <% } %>
 }
