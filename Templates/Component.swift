@@ -1,4 +1,4 @@
-<%
+import SourceryRuntime
 
 func constructor(for type: Type) -> String {
     guard let method = type.methods.filter({ $0.annotations.keys.contains("Inject") }).first else { return "/* No constructor available */" }
@@ -42,6 +42,3 @@ func main() {
         print("}")
     }
 }
-
-main()
-%>
