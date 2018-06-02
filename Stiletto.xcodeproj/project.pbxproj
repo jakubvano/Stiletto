@@ -14,6 +14,7 @@
 		CD05752420C2A6B000C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD05752720C2AAFF00C6995B /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05752620C2AAFF00C6995B /* Support.swift */; };
 		CD05752820C2AD1900C6995B /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05750E20C2A59100C6995B /* Component.swift */; };
+		CD05752A20C2D97400C6995B /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05752920C2D97400C6995B /* Provider.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F52720B85D1100FBB87F /* Stiletto.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD9F51920B85D1100FBB87F /* Stiletto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
@@ -63,6 +64,7 @@
 		CD05751920C2A65500C6995B /* Templates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Templates.h; sourceTree = "<group>"; };
 		CD05751A20C2A65500C6995B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD05752620C2AAFF00C6995B /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		CD05752920C2D97400C6995B /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51920B85D1100FBB87F /* Stiletto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stiletto.h; sourceTree = "<group>"; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				CDD9F51920B85D1100FBB87F /* Stiletto.h */,
 				CDD9F51A20B85D1100FBB87F /* Info.plist */,
+				CD05752920C2D97400C6995B /* Provider.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -392,7 +395,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "OUT=${SRCROOT}/Templates/Component.swifttemplate\nIN=${SRCROOT}/Templates/Component.swift > ${SRCROOT}/Templates/Component.swifttemplate\n\n\necho \"<%\" > $OUT\ncat $IN | sed '/import .*/d' >> $OUT\necho \"\" >> $OUT\necho \"main()\" >> $OUT\necho \"%>\" >> $OUT";
+			shellScript = "OUT=${SRCROOT}/Templates/Component.swifttemplate\nIN=${SRCROOT}/Templates/Component.swift > ${SRCROOT}/Templates/Component.swifttemplate\n\n\necho \"<%\" > $OUT\ncat $IN | sed '/import SourceryRuntime/d' >> $OUT\necho \"\" >> $OUT\necho \"main()\" >> $OUT\necho \"%>\" >> $OUT";
 		};
 		CDD9F53320B85F2B00FBB87F /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -424,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD05752A20C2D97400C6995B /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

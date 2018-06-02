@@ -6,11 +6,16 @@ import Nimble
 class ComponentSpec: QuickSpec {
     override func spec() {
         var component: PersonComponent!
-        beforeEach { component = StilettoPersonComponent.create() }
+        beforeEach { component = StilettoPersonComponent() }
 
         describe("constructor injection") {
             it("uses annotated constructor for type instantiation") {
                 expect(component.child.parent).notTo(beNil())
+            }
+        }
+        describe("property injection") {
+            it("initializes annotated property") {
+                expect(component.parent.office).notTo(beNil())
             }
         }
     }
@@ -23,14 +28,17 @@ protocol PersonComponent {
     var child: Child { get }
 }
 
-class Home {
+class Building {
     // sourcery: Inject
     init() {}
 }
 
 class Parent {
     // sourcery: Inject
-    init(home: Home) {}
+    var office: Building!
+
+    // sourcery: Inject
+    init(home: Building) {}
 }
 
 class Child {
