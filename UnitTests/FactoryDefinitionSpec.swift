@@ -16,6 +16,10 @@ class FactoryDefinitionSpec: QuickSpec {
                 let definition = try? FactoryDefinition(type(name: "Foo"))
                 expect(definition?.interfaceName) == "Provider<Foo>"
             }
+            it("has the correct instance type name") {
+                let definition = try? FactoryDefinition(type(name: "Foo"))
+                expect(definition?.instanceTypeName) == "Foo"
+            }
         }
         describe("constructor") {
             it("is the injectable init method") {
@@ -52,6 +56,11 @@ class FactoryDefinitionSpec: QuickSpec {
                 ]))
                 expect(definition?.members.first?.name) == "barProvider"
                 expect(definition?.members.first?.typeName) == "Provider<Bar>"
+            }
+        }
+        describe("member name creation") {
+            it("returns correct value") {
+                expect(FactoryDefinition.Member.name(for: "Foo")) == "fooProvider"
             }
         }
         describe("errors") {

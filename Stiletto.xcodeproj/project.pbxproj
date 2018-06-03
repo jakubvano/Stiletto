@@ -69,6 +69,7 @@
 		CD05755E20C3DD8600C6995B /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD05756220C3DD8600C6995B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD05756920C3DEF100C6995B /* FactoryDefinitionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryDefinitionSpec.swift; sourceTree = "<group>"; };
+		CD05757020C3F6EA00C6995B /* FactoryDefinition.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = FactoryDefinition.swifttemplate; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD9F53A20B8625500FBB87F /* Stiletto.swifttemplate */,
+				CD05757020C3F6EA00C6995B /* FactoryDefinition.swifttemplate */,
 			);
 			path = Templates;
 			sourceTree = "<group>";

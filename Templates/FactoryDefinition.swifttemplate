@@ -1,0 +1,21 @@
+private final class <%= definition.implementationName %>: <% definition.interfaceName %> {
+<% if !definition.members.isEmpty { }%>
+  <% for member in definition.members { %>
+    private let <%= member.name %>: <%= member.typeName %>
+  <% } %>
+
+    init(<%= definition.members.map { "\($0.name): \($0.typeName)" }.joined(separator: ", ") %>) {
+      <% for member in definition.members { %>
+        self.<%= member.name %> = <%= member.name %>
+      <% } %>
+    }
+<% } %>
+
+    override var instance: <%= definition.instanceTypeName %> {
+        return <%= definition.instanceTypeName %>.<%= definition.constructor.callName %>(<%=
+            definition.constructor.paramaters
+                .map { "\($0.name): \(FactoryDefinition.Member.name(for: $0.typeName.name)).instance" }
+                .joined(separator: ", ")
+        %>)
+    }
+}

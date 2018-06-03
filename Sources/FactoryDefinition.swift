@@ -3,6 +3,7 @@ import SourceryRuntime
 struct FactoryDefinition {
     let interfaceName: String
     let implementationame: String
+    let instanceTypeName: String
     let members: [Member]
     let constructor: Method
 
@@ -11,8 +12,12 @@ struct FactoryDefinition {
         let typeName: String
 
         init(_ parameter: MethodParameter) {
-            self.name = Utils.camelCased(parameter.typeName.name) + "Provider"
+            self.name = Member.name(for: parameter.typeName.name)
             self.typeName = "Provider<\(parameter.typeName)>"
+        }
+
+        static func name(for typeName: String) -> String {
+            return Utils.camelCased(typeName) + "Provider"
         }
     }
 
@@ -29,6 +34,7 @@ struct FactoryDefinition {
 
         self.interfaceName = "Provider<\(type.name)>"
         self.implementationame = "\(type.name)$$Factory"
+        self.instanceTypeName = type.name
         self.constructor = constructors[0]
         self.members = constructor.parameters.map(Member.init)
     }
