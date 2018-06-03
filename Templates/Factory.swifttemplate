@@ -1,20 +1,20 @@
-private final class <%= definition.implementationName %>: <% definition.interfaceName %> {
-<% if !definition.members.isEmpty { }%>
-  <% for member in definition.members { %>
+private final class <%= factory.implementationName %>: <% factory.interfaceName %> {
+<% if !factory.members.isEmpty { }%>
+  <% for member in factory.members { %>
     private let <%= member.name %>: <%= member.typeName %>
   <% } %>
 
-    init(<%= definition.members.map { "\($0.name): \($0.typeName)" }.joined(separator: ", ") %>) {
-      <% for member in definition.members { %>
+    init(<%= factory.members.map { "\($0.name): \($0.typeName)" }.joined(separator: ", ") %>) {
+      <% for member in factory.members { %>
         self.<%= member.name %> = <%= member.name %>
       <% } %>
     }
 <% } %>
 
-    override var instance: <%= definition.instanceTypeName %> {
-        return <%= definition.instanceTypeName %>.<%= definition.constructor.callName %>(<%=
-            definition.constructor.paramaters
-                .map { "\($0.name): \(FactoryDefinition.Member.name(for: $0.typeName.name)).instance" }
+    override var instance: <%= factory.instanceTypeName %> {
+        return <%= factory.instanceTypeName %>.<%= factory.constructor.callName %>(<%=
+            factory.constructor.paramaters
+                .map { "\($0.name): \(Factoryfactory.Member.name(for: $0.typeName.name)).instance" }
                 .joined(separator: ", ")
         %>)
     }
