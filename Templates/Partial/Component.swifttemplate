@@ -1,20 +1,20 @@
 final class <%= component.implementationName %>: <%= component.interfaceName %> {
-  <% for member in component.members { %>
+  <%_ for member in component.members { -%>
     private let <%= member.name %>: <%= member.typeName %>
-  <% } %>
+  <%_ } -%>
 
     init() {
-      <% for member in component.members { %>
-        <% let factory = try Factory(member.type) %>
-        <%= member.name %> = <%= factory.implementationName %>(
-          <%= factory.members.map { "\($0.name): \($0.name)" }.joined(separator: ", ") %>
-        )
-      <% } %>
+      <%_ for member in component.members {
+        let factory = try Factory(member.type)
+        let parameters = factory.members.map { "\($0.name): \($0.name)" }.joined(separator: ", ")
+      -%>
+        <%= member.name %> = <%= factory.implementationName %>(<%= parameters %>)
+      <%_ } -%>
     }
 
-  <% for variable in component.variables { %>
+  <%_ for variable in component.variables { -%>
     var <%= variable.name %>: <%= variable.typeName %> {
         return <%= Member.name(for: variable.typeName.name) %>.instance
     }
-  <% } %>
+  <%_ } -%>
 }
