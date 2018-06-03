@@ -1,10 +1,45 @@
 <%
 
-func isInjectable(_ identifier: Annotated) -> Bool {
-    return identifier.annotations.keys.contains("Inject")
+struct FactoryDefinition {
+    let interfaceName: String
+    let implementationame: String
+    let members: [Member]
+    let constructor: Constructor
+
+    struct Member {
+        let name: String
+        let typeName: String
+    }
+
+    struct Constructor {
+        let callName: String
+        let params: [Member]
+    }
+
+    enum Error: Swift.Error {
+        case noInit
+        case multipleInits
+    }
+
+    init(for type: Type) throws {
+        let constructors = type.methods.filter(Utils.isInjectable).filter { $0.name == "init" }
+        guard !constructors.isEmpty else { throw FactoryDefinition.Error.noInit }
+        guard constructors.count == 1 else { throw FactoryDefinition.Error.multipleInits }
+
+        interfaceName = "Provider<\(type.name)>"
+        implementationame = "\(type.name)$$Factory"
+        members = []
+        constructor = Constructor(callName: "", params: [])
+    }
 }
 
-func camelCased(_ name: String) -> String {
-    return name.prefix(1).lowercased() + name.dropFirst()
+enum Utils {
+    static func isInjectable(_ identifier: Annotated) -> Bool {
+        return identifier.annotations.keys.contains("Inject")
+    }
+
+    static func camelCased(_ name: String) -> String {
+        return name.prefix(1).lowercased() + name.dropFirst()
+    }
 }
 %>

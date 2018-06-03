@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2795A58EB11CEF254D4640C7 /* Pods_Stiletto_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */; };
-		51D5A3C270C9166D091B3AAF /* Pods_IntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A41AA3690DC610A97EB6D9 /* Pods_IntegrationTests.framework */; };
 		B64722A2696F234816C9671E /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27E4965A1AA31D8230A6CFC /* Pods_UnitTests.framework */; };
 		CD05755520C3DC2500C6995B /* FactoryDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05754D20C3015E00C6995B /* FactoryDefinition.swift */; };
 		CD05755620C3DC2500C6995B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05754F20C304E500C6995B /* Utils.swift */; };
 		CD05755920C3DD2B00C6995B /* ComponentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53820B8619300FBB87F /* ComponentSpec.swift */; };
 		CD05756320C3DD8600C6995B /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CD05756A20C3DEF100C6995B /* FactoryDefinitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05756920C3DEF100C6995B /* FactoryDefinitionSpec.swift */; };
+		CD05756C20C3E55500C6995B /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; };
+		CD05756D20C3E56900C6995B /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; };
+		CD05756F20C3E57F00C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -37,6 +39,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CD05756E20C3E56E00C6995B /* Copy Carthage Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD05756F20C3E57F00C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */,
+			);
+			name = "Copy Carthage Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1E2792BADE2D5863228204FC /* Pods-Stiletto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto/Pods-Stiletto.release.xcconfig"; sourceTree = "<group>"; };
 		22F13B837DBD8092CEFB679D /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,7 +62,6 @@
 		82A95A8B3FE4C88E69ED346C /* Pods-IntegrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IntegrationTests/Pods-IntegrationTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F82673939066E75BC1F3808 /* Pods-Stiletto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto/Pods-Stiletto.debug.xcconfig"; sourceTree = "<group>"; };
 		B27E4965A1AA31D8230A6CFC /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3A41AA3690DC610A97EB6D9 /* Pods_IntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DF7A4A874BC50721FB55B9 /* Pods-IntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IntegrationTests/Pods-IntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD05751020C2A5A600C6995B /* SourceryRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceryRuntime.framework; path = Carthage/Build/Mac/SourceryRuntime.framework; sourceTree = "<group>"; };
 		CD05754D20C3015E00C6995B /* FactoryDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryDefinition.swift; sourceTree = "<group>"; };
@@ -68,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD05756C20C3E55500C6995B /* SourceryRuntime.framework in Frameworks */,
 				CD05756320C3DD8600C6995B /* Stiletto.framework in Frameworks */,
 				B64722A2696F234816C9671E /* Pods_UnitTests.framework in Frameworks */,
 			);
@@ -77,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD05756D20C3E56900C6995B /* SourceryRuntime.framework in Frameworks */,
 				DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +104,6 @@
 			files = (
 				CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */,
 				2795A58EB11CEF254D4640C7 /* Pods_Stiletto_Tests.framework in Frameworks */,
-				51D5A3C270C9166D091B3AAF /* Pods_IntegrationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +116,6 @@
 				CD05751020C2A5A600C6995B /* SourceryRuntime.framework */,
 				516F096072858C0B8D51046E /* Pods_Stiletto.framework */,
 				28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */,
-				B3A41AA3690DC610A97EB6D9 /* Pods_IntegrationTests.framework */,
 				B27E4965A1AA31D8230A6CFC /* Pods_UnitTests.framework */,
 			);
 			name = Frameworks;
@@ -201,6 +216,7 @@
 				CD05755B20C3DD8600C6995B /* Frameworks */,
 				CD05755C20C3DD8600C6995B /* Resources */,
 				44822F96D877655B2CDBDF64 /* [CP] Embed Pods Frameworks */,
+				CD05756E20C3E56E00C6995B /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,6 +523,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -526,6 +546,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
