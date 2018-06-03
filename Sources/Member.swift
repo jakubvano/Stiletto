@@ -11,7 +11,10 @@ struct Member: Equatable {
 
     init(_ parameter: Typed) throws {
         guard let type = parameter.type else { throw Member.Error.missingType }
+        self.init(type)
+    }
 
+    init(_ type: Type) {
         self.name = Member.name(for: type.name)
         self.typeName = Member.typeName(for: type.name)
         self.type = type

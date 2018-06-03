@@ -8,4 +8,8 @@ enum Utils {
     static func camelCased(_ name: String) -> String {
         return name.prefix(1).lowercased() + name.dropFirst()
     }
+
+    static func appendIfNew<T: Equatable>(array: [T], element: T) -> [T] {
+        return array.contains(element) ? array : array + [element]
+    }
 }

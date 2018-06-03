@@ -11,7 +11,10 @@ struct Member: Equatable {
 
     init(_ parameter: Typed) throws {
         guard let type = parameter.type else { throw Member.Error.missingType }
+        self.init(type)
+    }
 
+    init(_ type: Type) {
         self.name = Member.name(for: type.name)
         self.typeName = Member.typeName(for: type.name)
         self.type = type
@@ -30,12 +33,30 @@ struct Component {
     let implementationName: String
     let interfaceName: String
     let members: [Member]
+    let variables: [Variable]
 
     init(_ type: Type) throws {
         implementationName = "Stiletto\(type.name)"
         interfaceName = type.name
-        members = try type.variables.map(Member.init)
+        members = try allDependencies(for: type.variables).map(Member.init)
+        variables = type.variables
     }
+}
+
+func allDependencies(for variables: [Typed]) throws -> [Type] {
+    let types: [Type] = try variables
+        .map { if let type = $0.type { return type } else { throw Member.Error.missingType } }
+    return try allDependencies(for: types)
+}
+
+func allDependencies(for types: [Type]) throws -> [Type] {
+    return try types
+        .map(Factory.init)
+        .flatMap { $0.members }
+        .map { [$0.type] }
+        .map(allDependencies)
+        .reduce(types, +)
+        .reduce([], Utils.appendIfNew)
 }
 
 enum Utils {
@@ -45,6 +66,10 @@ enum Utils {
 
     static func camelCased(_ name: String) -> String {
         return name.prefix(1).lowercased() + name.dropFirst()
+    }
+
+    static func appendIfNew<T: Equatable>(array: [T], element: T) -> [T] {
+        return array.contains(element) ? array : array + [element]
     }
 }
 
