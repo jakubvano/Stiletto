@@ -1,4 +1,4 @@
-private final class <%= factory.implementationName %>: <% factory.interfaceName %> {
+private final class <%= factory.implementationName %>: <%= factory.interfaceName %> {
 <% if !factory.members.isEmpty { %>
   <% for member in factory.members { %>
     private let <%= member.name %>: <%= member.typeName %>
@@ -13,8 +13,8 @@ private final class <%= factory.implementationName %>: <% factory.interfaceName 
 
     override var instance: <%= factory.instanceTypeName %> {
         <%
-          let parameters = factory.constructor.paramaters
-                .map { "\($0.name): \(Factoryfactory.Member.name(for: $0.typeName.name)).instance" }
+          let parameters = factory.constructor.parameters
+                .map { "\($0.name): \(Member.name(for: $0.typeName.name)).instance" }
                 .joined(separator: ", ")
         %>
         return <%= factory.instanceTypeName %>.<%= factory.constructor.callName %>(<%= parameters %>)
