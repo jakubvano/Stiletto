@@ -7,11 +7,11 @@ struct Member: Equatable {
     let type: Type
 
     enum Error: Swift.Error {
-        case missingType
+        case missingType(Typed)
     }
 
     init(_ parameter: Typed) throws {
-        guard let type = parameter.type else { throw Member.Error.missingType }
+        guard let type = parameter.type else { throw Member.Error.missingType(parameter) }
         self.init(type)
     }
 

@@ -1,1 +1,12 @@
-
+<% do { let stiletto = try Stiletto(types) %>
+  <% for component in stiletto.components { %>
+    private class <%= component.implementationName %> {}
+  <% } %>
+  <% for factory in stiletto.factories { %>
+     private class <%= factory.implementationName %> {}
+  <% } %>
+<% } catch let error { %>
+    // Stiletto Generation Failed
+    // TODO: Error handling
+    // <%= error %>
+<% } %>

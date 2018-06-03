@@ -18,7 +18,7 @@ class MemberSpec: QuickSpec {
         describe("type") {
             it("throws if not type available") {
                 expect { try Member(Variable(typeName: TypeName("Foo"), type: nil)) }
-                    .to(throwError(Member.Error.missingType))
+                    .to(throwError(Member.Error.missingType__))
             }
             it("has correct type") {
                 let type = Type(name: "Foo")

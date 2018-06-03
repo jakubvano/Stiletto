@@ -7,7 +7,7 @@ class StilettoSpec: QuickSpec {
     override func spec() {
         describe("compoenents") {
             it("contains types components from annotated types") {
-                let type = Type(name: "Foo", annotations: ["Component": NSObject()])
+                let type = Protocol(name: "Foo", annotations: ["Component": NSObject()])
                 let componentNames = try? Stiletto(Types(types: [type])).components.map { $0.implementationName }
                 expect(componentNames).to(contain("StilettoFoo"))
             }
@@ -19,7 +19,7 @@ class StilettoSpec: QuickSpec {
         }
         describe("factories") {
             it("contains factories for all component members") {
-                let type = Type(
+                let type = Protocol(
                     variables: [Variable(typeName: TypeName(typeD.name), type: typeD)],
                     annotations: ["Component": NSObject()]
                 )
@@ -27,12 +27,12 @@ class StilettoSpec: QuickSpec {
                 expect(typeNames).to(contain(["A", "B", "C", "D"]))
             }
             it("does not contain duplicit factories") {
-                let type1 = Type(
+                let type1 = Protocol(
                     name: "1",
                     variables: [Variable(typeName: TypeName(typeD.name), type: typeD)],
                     annotations: ["Component": NSObject()]
                 )
-                let type2 = Type(
+                let type2 = Protocol(
                     name: "2",
                     variables: [Variable(typeName: TypeName(typeC.name), type: typeC)],
                     annotations: ["Component": NSObject()]

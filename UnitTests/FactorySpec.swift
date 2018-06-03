@@ -61,15 +61,15 @@ class FactorySpec: QuickSpec {
         describe("errors") {
             it("throws if no methods available") {
                 expect { try Factory(type(methods: [])) }
-                    .to(throwError(Factory.Error.noInit))
+                    .to(throwError(Factory.Error.noInit__))
             }
             it("throws if no init found") {
                 expect { try Factory(type(methods: [Method(name: "custom")])) }
-                    .to(throwError(Factory.Error.noInit))
+                    .to(throwError(Factory.Error.noInit__))
             }
             it("throws if no injectable init found") {
                 expect { try Factory(type(methods: [Method(name: "init")])) }
-                    .to(throwError(Factory.Error.noInit))
+                    .to(throwError(Factory.Error.noInit__))
             }
             it("throws if multiple injectable init found") {
                 expect {
@@ -78,7 +78,15 @@ class FactorySpec: QuickSpec {
                             Method(name: "init", annotations: ["Inject": NSObject()])
                         ]))
                     }
-                    .to(throwError(Factory.Error.multipleInits))
+                    .to(throwError(Factory.Error.multipleInits__))
+            }
+            it("does not throw if injectable init with params found") {
+                expect {
+                    try Factory(type(methods: [
+                            Method(name: "init(param:)", annotations: ["Inject": NSObject()])
+                        ]))
+                    }
+                    .notTo(throwError())
             }
             it("does not throw if multiple non-injectable inits found") {
                 expect {

@@ -5,18 +5,18 @@ struct Factory {
     let implementationName: String
     let instanceTypeName: String
     let members: [Member]
-    let constructor: Method
+    let constructor: SourceryRuntime.Method
 
     enum Error: Swift.Error {
-        case noInit
-        case multipleInits
+        case noInit(Type)
+        case multipleInits(Type)
     }
 
     init(_ type: Type) throws {
-        let constructors = type.methods.filter(Utils.isInjectable).filter { $0.name == "init" }
+        let constructors = type.methods.filter(Utils.isInjectable).filter { $0.callName == "init" }
 
-        guard !constructors.isEmpty else { throw Factory.Error.noInit }
-        guard constructors.count == 1 else { throw Factory.Error.multipleInits }
+        guard !constructors.isEmpty else { throw Factory.Error.noInit(type) }
+        guard constructors.count == 1 else { throw Factory.Error.multipleInits(type) }
 
         self.interfaceName = "Provider<\(type.name)>"
         self.implementationName = "\(type.name)$$Factory"

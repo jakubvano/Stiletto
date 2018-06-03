@@ -25,6 +25,7 @@
 		CD05759420C41FFB00C6995B /* Stiletto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759320C41FFB00C6995B /* Stiletto.swift */; };
 		CD05759620C4207C00C6995B /* StilettoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759520C4207C00C6995B /* StilettoSpec.swift */; };
 		CD05759820C4231C00C6995B /* Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759720C4231C00C6995B /* Fakes.swift */; };
+		CD0575A220C4320600C6995B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0575A120C4320600C6995B /* Utils.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -88,6 +89,7 @@
 		CD05759320C41FFB00C6995B /* Stiletto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stiletto.swift; sourceTree = "<group>"; };
 		CD05759520C4207C00C6995B /* StilettoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StilettoSpec.swift; sourceTree = "<group>"; };
 		CD05759720C4231C00C6995B /* Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakes.swift; sourceTree = "<group>"; };
+		CD0575A120C4320600C6995B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,8 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD9F53A20B8625500FBB87F /* Stiletto.swifttemplate */,
-				CD05757020C3F6EA00C6995B /* Factory.swifttemplate */,
-				CD05758E20C4064A00C6995B /* Component.swifttemplate */,
+				CD05759920C426E700C6995B /* Partial */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -174,8 +175,18 @@
 				CD05759020C40DCB00C6995B /* MemberSpec.swift */,
 				CD05759520C4207C00C6995B /* StilettoSpec.swift */,
 				CD05759720C4231C00C6995B /* Fakes.swift */,
+				CD0575A120C4320600C6995B /* Utils.swift */,
 			);
 			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		CD05759920C426E700C6995B /* Partial */ = {
+			isa = PBXGroup;
+			children = (
+				CD05757020C3F6EA00C6995B /* Factory.swifttemplate */,
+				CD05758E20C4064A00C6995B /* Component.swifttemplate */,
+			);
+			path = Partial;
 			sourceTree = "<group>";
 		};
 		CDD9F50C20B85D1100FBB87F = {
@@ -472,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TEMPLATE=$SRCROOT/Templates/Stiletto.swifttemplate\n\necho \"<%\" > $TEMPLATE\n\nfor FILE in $(find $SRCROOT/Sources -name \"[a-zA-Z]*.swift\")\ndo\ncat $FILE | sed '/import SourceryRuntime/d' >> $TEMPLATE\ndone\n\necho \"%>\" >> $TEMPLATE\n\n";
+			shellScript = "TEMPLATE=$SRCROOT/Sources/Stiletto.swifttemplate\nOUTPUT=$SRCROOT/Templates/Stiletto.swifttemplate\n\necho \"<%\" > $OUTPUT\n\nfor FILE in $(find $SRCROOT/Sources -name \"[a-zA-Z]*.swift\")\ndo\n    cat $FILE | sed '/import SourceryRuntime/d' >> $OUTPUT\ndone\n\necho \"%>\" >> $OUTPUT\n\ncat $TEMPLATE >> $OUTPUT\n\n";
 		};
 		CD05756B20C3DF6B00C6995B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -500,7 +511,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery --sources IntegrationTests --templates Templates --output IntegrationTests/GeneratedCode.swift\n";
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery --config IntegrationTests\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -514,6 +525,7 @@
 				CD05759120C40DCB00C6995B /* MemberSpec.swift in Sources */,
 				CD05756A20C3DEF100C6995B /* FactorySpec.swift in Sources */,
 				CD05758720C4046800C6995B /* ComponentSpec.swift in Sources */,
+				CD0575A220C4320600C6995B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

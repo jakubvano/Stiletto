@@ -1,4 +1,4 @@
-final class <%= compenent.implementationName %>: <%= compoenent.interfaceName %> {
+final class <%= component.implementationName %>: <%= component.interfaceName %> {
   <% for member in component.members { %>
     private let <%= member.name %>: <%= member.typeName %>
   <% } %>
@@ -7,7 +7,7 @@ final class <%= compenent.implementationName %>: <%= compoenent.interfaceName %>
       <% for member in component.members { %>
         <% factory = Factory(member.type) %>
         <%= member.name %> = <%= factory.implementationName %>(
-            <%= factory.members.map { "\($0.name): \($.name)" }.joined(separator: ", ") %>
+          <%= factory.members.map { "\($0.name): \($.name)" }.joined(separator: ", ") %>
         )
       <% } %>
     }
