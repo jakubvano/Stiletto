@@ -12,6 +12,7 @@ struct Component {
         variables = type.variables
 
         // TODO: Performance
+        // TODO: Cycle detection
         members = try Component.allDependencies(for: type.variables)
             .sorted(by: Component.dependencyTreeOrdering)
             .map(Member.init)

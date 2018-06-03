@@ -1,22 +1,22 @@
 private final class <%= factory.implementationName %>: <%= factory.interfaceName %> {
-<% if !factory.members.isEmpty { %>
-  <% for member in factory.members { %>
+<%_ if !factory.members.isEmpty { -%>
+  <%_ for member in factory.members { -%>
     private let <%= member.name %>: <%= member.typeName %>
-  <% } %>
+  <%_ } -%>
 
     init(<%= factory.members.map { "\($0.name): \($0.typeName)" }.joined(separator: ", ") %>) {
-      <% for member in factory.members { %>
+      <%_ for member in factory.members { -%>
         self.<%= member.name %> = <%= member.name %>
-      <% } %>
+      <%_ } -%>
     }
-<% } %>
+<%_ } -%>
 
     override var instance: <%= factory.instanceTypeName %> {
-        <%
-          let parameters = factory.constructor.parameters
-                .map { "\($0.name): \(Member.name(for: $0.typeName.name)).instance" }
-                .joined(separator: ", ")
-        %>
+      <%_
+        let parameters = factory.constructor.parameters
+            .map { "\($0.name): \(Member.name(for: $0.typeName.name)).instance" }
+            .joined(separator: ", ")
+      -%>
         return <%= factory.instanceTypeName %>.<%= factory.constructor.callName %>(<%= parameters %>)
     }
 }
