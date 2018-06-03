@@ -40,6 +40,14 @@ class ComponentSpec: QuickSpec {
                 let members = try? Component(type).members
                 expect(members).to(haveCount(4))
             }
+            it("contains members sorted by dependency tree") {
+                let type = Type(variables: [
+                    Variable(typeName: TypeName(typeD.name), type: typeD),
+                    Variable(typeName: TypeName(typeA.name), type: typeA)
+                ])
+                let memberTypes = try? Component(type).members.map { $0.type }
+                expect(memberTypes) == [typeA, typeB, typeC, typeD]
+            }
         }
         describe("variables") {
             it("is the same as variables of type") {

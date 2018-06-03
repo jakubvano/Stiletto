@@ -9,8 +9,12 @@ struct Component {
     init(_ type: Type) throws {
         implementationName = "Stiletto\(type.name)"
         interfaceName = type.name
-        members = try Component.allDependencies(for: type.variables).map(Member.init)
         variables = type.variables
+
+        // TODO: Performance
+        members = try Component.allDependencies(for: type.variables)
+            .sorted(by: Component.dependencyTreeOrdering)
+            .map(Member.init)
     }
 
     static func allDependencies(for variables: [Typed]) throws -> [Type] {
@@ -27,5 +31,9 @@ struct Component {
             .map(allDependencies)
             .reduce(types, +)
             .reduce([], Utils.appendIfNew)
+    }
+
+    static func dependencyTreeOrdering(_ type1: Type, _ type2: Type) throws -> Bool {
+        return try allDependencies(for: [type2]).contains(type1)
     }
 }

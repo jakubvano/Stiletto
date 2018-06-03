@@ -26,6 +26,7 @@
 		CD05759620C4207C00C6995B /* StilettoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759520C4207C00C6995B /* StilettoSpec.swift */; };
 		CD05759820C4231C00C6995B /* Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759720C4231C00C6995B /* Fakes.swift */; };
 		CD0575A220C4320600C6995B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0575A120C4320600C6995B /* Utils.swift */; };
+		CD0575A420C43B1600C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -56,6 +57,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CD05756F20C3E57F00C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */,
+			);
+			name = "Copy Carthage Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0575A320C43B0400C6995B /* Copy Carthage Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD0575A420C43B1600C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */,
 			);
 			name = "Copy Carthage Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +313,7 @@
 				CDD9F51C20B85D1100FBB87F /* Frameworks */,
 				CDD9F51D20B85D1100FBB87F /* Resources */,
 				BCC91960B827C9F933CE36FD /* [CP] Embed Pods Frameworks */,
+				CD0575A320C43B0400C6995B /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
