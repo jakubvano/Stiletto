@@ -13,14 +13,6 @@ class ComponentSpec: QuickSpec {
                 expect(component.child.parent).notTo(beNil())
             }
         }
-        describe("property injection") {
-            it("injects annotated property") {
-                expect(component.parent.office).notTo(beNil())
-            }
-            it("does not inject not annotated property") {
-                expect(component.parent.gym).to(beNil())
-            }
-        }
     }
 }
 
@@ -37,11 +29,6 @@ class Building {
 }
 
 class Parent {
-    // sourcery: Inject
-    var office: Building!
-
-    var gym: Building!
-
     // sourcery: Inject
     init(home: Building) {}
 }
