@@ -1,9 +1,17 @@
-target 'Stiletto' do
-  use_frameworks!
+use_frameworks!
 
-  target 'Tests' do 
-  	pod 'Sourcery'
-  	pod 'Nimble'
-  	pod 'Quick'
-  end
+pod 'SwiftLint'
+
+target 'Stiletto' do 
+end
+
+target 'IntegrationTests' do
+    pod 'Sourcery'
+    pod 'Nimble'
+    pod 'Quick'
+end
+
+target 'UnitTests' do
+    pod 'Nimble'
+    pod 'Quick'
 end

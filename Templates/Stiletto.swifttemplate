@@ -1,6 +1,5 @@
 <%
 
-
 func isInjectable(_ identifier: Annotated) -> Bool {
     return identifier.annotations.keys.contains("Inject")
 }

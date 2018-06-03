@@ -1,5 +1,3 @@
-// swiftlint:disable function_body_length
-
 import Quick
 import Nimble
 
@@ -15,7 +13,6 @@ class ComponentSpec: QuickSpec {
         }
     }
 }
-
 
 // sourcery: Component
 protocol PersonComponent {
