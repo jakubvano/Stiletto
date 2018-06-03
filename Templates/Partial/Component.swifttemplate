@@ -11,4 +11,10 @@ final class <%= component.implementationName %>: <%= component.interfaceName %> 
         )
       <% } %>
     }
+
+  <% for variable in component.variables { %>
+    var <%= variable.name %>: <%= variable.typeName %> {
+        return <%= Member.name(for: variable.typeName.name) %>.instance
+    }
+  <% } %>
 }
