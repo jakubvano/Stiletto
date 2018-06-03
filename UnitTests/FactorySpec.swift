@@ -38,8 +38,8 @@ class FactorySpec: QuickSpec {
                     Method(
                         name: "init",
                         parameters: [
-                            MethodParameter(name: "foo", typeName: TypeName("Foo")),
-                            MethodParameter(name: "bar", typeName: TypeName("Bar"))
+                            MethodParameter(name: "foo", typeName: TypeName("Foo"), type: Type(name: "Foo")),
+                            MethodParameter(name: "bar", typeName: TypeName("Bar"), type: Type(name: "Bar"))
                         ],
                         annotations: ["Inject": NSObject()]
                     )
@@ -50,17 +50,12 @@ class FactorySpec: QuickSpec {
                 let definition = try? Factory(type(methods: [
                     Method(
                         name: "init",
-                        parameters: [MethodParameter(name: "foo", typeName: TypeName("Bar"))],
+                        parameters: [MethodParameter(name: "foo", typeName: TypeName("Bar"), type: Type(name: "Bar"))],
                         annotations: ["Inject": NSObject()]
                     )
                 ]))
                 expect(definition?.members.first?.name) == "barProvider"
                 expect(definition?.members.first?.typeName) == "Provider<Bar>"
-            }
-        }
-        describe("member name creation") {
-            it("returns correct value") {
-                expect(Member.name(for: "Foo")) == "fooProvider"
             }
         }
         describe("errors") {

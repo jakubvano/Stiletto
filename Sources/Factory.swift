@@ -22,6 +22,6 @@ struct Factory {
         self.implementationame = "\(type.name)$$Factory"
         self.instanceTypeName = type.name
         self.constructor = constructors[0]
-        self.members = constructor.parameters.map(Member.init)
+        self.members = try constructor.parameters.map(Member.init)
     }
 }

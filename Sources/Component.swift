@@ -5,9 +5,9 @@ struct Component {
     let interfaceName: String
     let members: [Member]
 
-    init(_ protocol: Protocol) {
-        implementationName = ""
-        interfaceName = ""
-        members = []
+    init(_ type: Type) throws {
+        implementationName = "Stiletto\(type.name)"
+        interfaceName = type.name
+        members = try type.variables.map(Member.init)
     }
 }

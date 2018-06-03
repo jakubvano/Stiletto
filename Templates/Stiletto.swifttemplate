@@ -1,16 +1,28 @@
 <%
 
-struct Member {
+struct Member: Equatable {
     let name: String
     let typeName: String
+    let type: Type
 
-    init(_ parameter: MethodParameter) {
-        self.name = Member.name(for: parameter.typeName.name)
-        self.typeName = "Provider<\(parameter.typeName)>"
+    enum Error: Swift.Error {
+        case missingType
+    }
+
+    init(_ parameter: Typed) throws {
+        guard let type = parameter.type else { throw Member.Error.missingType }
+
+        self.name = Member.name(for: type.name)
+        self.typeName = Member.typeName(for: type.name)
+        self.type = type
     }
 
     static func name(for typeName: String) -> String {
         return Utils.camelCased(typeName) + "Provider"
+    }
+
+    static func typeName(for typeName: String) -> String {
+        return "Provider<\(typeName)>"
     }
 }
 
@@ -19,10 +31,10 @@ struct Component {
     let interfaceName: String
     let members: [Member]
 
-    init(_ protocol: Protocol) {
-        implementationName = ""
-        interfaceName = ""
-        members = []
+    init(_ type: Type) throws {
+        implementationName = "Stiletto\(type.name)"
+        interfaceName = type.name
+        members = try type.variables.map(Member.init)
     }
 }
 
@@ -58,7 +70,7 @@ struct Factory {
         self.implementationame = "\(type.name)$$Factory"
         self.instanceTypeName = type.name
         self.constructor = constructors[0]
-        self.members = constructor.parameters.map(Member.init)
+        self.members = try constructor.parameters.map(Member.init)
     }
 }
 %>

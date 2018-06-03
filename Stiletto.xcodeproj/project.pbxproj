@@ -21,7 +21,7 @@
 		CD05758720C4046800C6995B /* ComponentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05758620C4046800C6995B /* ComponentSpec.swift */; };
 		CD05758C20C4055900C6995B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05758A20C4054100C6995B /* Member.swift */; };
 		CD05758D20C4055C00C6995B /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05758820C4047C00C6995B /* Component.swift */; };
-		CD05758F20C4064B00C6995B /* Component.swifttemplate in Sources */ = {isa = PBXBuildFile; fileRef = CD05758E20C4064A00C6995B /* Component.swifttemplate */; };
+		CD05759120C40DCB00C6995B /* MemberSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759020C40DCB00C6995B /* MemberSpec.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -79,7 +79,8 @@
 		CD05758620C4046800C6995B /* ComponentSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentSpec.swift; sourceTree = "<group>"; };
 		CD05758820C4047C00C6995B /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		CD05758A20C4054100C6995B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		CD05758E20C4064A00C6995B /* Component.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Component.swifttemplate; sourceTree = "<group>"; };
+		CD05758E20C4064A00C6995B /* Component.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Component.swifttemplate; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
+		CD05759020C40DCB00C6995B /* MemberSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSpec.swift; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +164,7 @@
 				CD05756220C3DD8600C6995B /* Info.plist */,
 				CD05756920C3DEF100C6995B /* FactorySpec.swift */,
 				CD05758620C4046800C6995B /* ComponentSpec.swift */,
+				CD05759020C40DCB00C6995B /* MemberSpec.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -496,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD05759120C40DCB00C6995B /* MemberSpec.swift in Sources */,
 				CD05756A20C3DEF100C6995B /* FactorySpec.swift in Sources */,
 				CD05758720C4046800C6995B /* ComponentSpec.swift in Sources */,
 			);
@@ -505,7 +508,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD05758F20C4064B00C6995B /* Component.swifttemplate in Sources */,
 				CD05755520C3DC2500C6995B /* Factory.swift in Sources */,
 				CD05758C20C4055900C6995B /* Member.swift in Sources */,
 				CD05758D20C4055C00C6995B /* Component.swift in Sources */,
