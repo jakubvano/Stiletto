@@ -5,9 +5,9 @@ final class <%= component.implementationName %>: <%= component.interfaceName %> 
 
     init() {
       <% for member in component.members { %>
-        <% factory = Factory(member.type) %>
+        <% let factory = try Factory(member.type) %>
         <%= member.name %> = <%= factory.implementationName %>(
-          <%= factory.members.map { "\($0.name): \($.name)" }.joined(separator: ", ") %>
+          <%= factory.members.map { "\($0.name): \($0.name)" }.joined(separator: ", ") %>
         )
       <% } %>
     }

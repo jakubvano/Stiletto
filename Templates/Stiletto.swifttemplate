@@ -118,12 +118,16 @@ struct Factory {
     }
 }
 %>
+class Provider<T> {
+    var instance: T { fatalError() } // To Be Overriden
+}
+
 <% do { let stiletto = try Stiletto(types) %>
   <% for component in stiletto.components { %>
-    private class <%= component.implementationName %> {}
+    <%- include("Partial/Component.swifttemplate") %>
   <% } %>
   <% for factory in stiletto.factories { %>
-     private class <%= factory.implementationName %> {}
+    <%- include("Partial/Factory.swifttemplate") %>
   <% } %>
 <% } catch let error { %>
     // Stiletto Generation Failed
