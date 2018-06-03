@@ -1,5 +1,6 @@
 <%
 
+// TODO: find better name
 struct Member: Equatable {
     let name: String
     let typeName: String
@@ -64,6 +65,10 @@ enum Utils {
         return identifier.annotations.keys.contains("Inject")
     }
 
+    static func isComponent(_ identifier: Annotated) -> Bool {
+        return identifier.annotations.keys.contains("Component")
+    }
+
     static func camelCased(_ name: String) -> String {
         return name.prefix(1).lowercased() + name.dropFirst()
     }
@@ -73,9 +78,23 @@ enum Utils {
     }
 }
 
+struct Stiletto {
+    let components: [Component]
+    let factories: [Factory]
+
+    init(_ types: Types) throws {
+        components = try types.all.filter(Utils.isComponent).map(Component.init)
+        factories = try components
+            .flatMap { $0.members }
+            .map { $0.type }
+            .reduce([], Utils.appendIfNew)
+            .map(Factory.init)
+    }
+}
+
 struct Factory {
     let interfaceName: String
-    let implementationame: String
+    let implementationName: String
     let instanceTypeName: String
     let members: [Member]
     let constructor: Method
@@ -92,7 +111,7 @@ struct Factory {
         guard constructors.count == 1 else { throw Factory.Error.multipleInits }
 
         self.interfaceName = "Provider<\(type.name)>"
-        self.implementationame = "\(type.name)$$Factory"
+        self.implementationName = "\(type.name)$$Factory"
         self.instanceTypeName = type.name
         self.constructor = constructors[0]
         self.members = try constructor.parameters.map(Member.init)

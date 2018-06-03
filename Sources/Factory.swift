@@ -2,7 +2,7 @@ import SourceryRuntime
 
 struct Factory {
     let interfaceName: String
-    let implementationame: String
+    let implementationName: String
     let instanceTypeName: String
     let members: [Member]
     let constructor: Method
@@ -19,7 +19,7 @@ struct Factory {
         guard constructors.count == 1 else { throw Factory.Error.multipleInits }
 
         self.interfaceName = "Provider<\(type.name)>"
-        self.implementationame = "\(type.name)$$Factory"
+        self.implementationName = "\(type.name)$$Factory"
         self.instanceTypeName = type.name
         self.constructor = constructors[0]
         self.members = try constructor.parameters.map(Member.init)

@@ -10,7 +10,7 @@ class FactorySpec: QuickSpec {
         describe("names") {
             it("has the correct implementation name") {
                 let definition = try? Factory(type(name: "Foo"))
-                expect(definition?.implementationame) == "Foo$$Factory"
+                expect(definition?.implementationName) == "Foo$$Factory"
             }
             it("has the correct interface name") {
                 let definition = try? Factory(type(name: "Foo"))

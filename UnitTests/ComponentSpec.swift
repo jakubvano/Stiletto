@@ -53,35 +53,3 @@ class ComponentSpec: QuickSpec {
         }
     }
 }
-
-private let typeA = Type(
-    name: "A",
-    methods: [Method(name: "init", annotations: ["Inject": NSObject()])]
-)
-private let typeB = Type(
-    name: "B",
-    methods: [Method(
-        name: "init",
-        parameters: [MethodParameter(typeName: TypeName(typeA.name), type: typeA)],
-        annotations: ["Inject": NSObject()]
-    )]
-)
-private let typeC = Type(
-    name: "C",
-    methods: [Method(
-        name: "init",
-        parameters: [MethodParameter(typeName: TypeName(typeB.name), type: typeB)],
-        annotations: ["Inject": NSObject()]
-    )]
-)
-private let typeD = Type(
-    name: "D",
-    methods: [Method(
-        name: "init",
-        parameters: [
-            MethodParameter(typeName: TypeName(typeB.name), type: typeB),
-            MethodParameter(typeName: TypeName(typeC.name), type: typeC)
-        ],
-        annotations: ["Inject": NSObject()]
-    )]
-)

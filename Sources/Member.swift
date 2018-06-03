@@ -1,5 +1,6 @@
 import SourceryRuntime
 
+// TODO: find better name
 struct Member: Equatable {
     let name: String
     let typeName: String
