@@ -1,3 +1,5 @@
+// swiftlint:disable function_body_length
+
 import Quick
 import Nimble
 import SourceryRuntime
@@ -13,6 +15,17 @@ class FactoryDefinitionSpec: QuickSpec {
             it("has the correct interface name") {
                 let definition = try? FactoryDefinition(for: type(name: "Foo"))
                 expect(definition?.interfaceName) == "Provider<Foo>"
+            }
+        }
+        describe("constructor") {
+            it("is the injectable init method") {
+                let constructor = Method(name: "init", annotations: ["Inject": NSObject()])
+                let definition = try? FactoryDefinition(for: type(methods: [
+                    Method(name: "init"),
+                    constructor,
+                    Method(name: "custom", annotations: ["Inject": NSObject()])
+                    ]))
+                expect(definition?.constructor) == constructor
             }
         }
         describe("errors") {
