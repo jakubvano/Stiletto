@@ -87,6 +87,13 @@ class FactorySpec: QuickSpec {
                 ))
                 expect(definition?.members).to(haveCount(1))
             }
+            it("removes implicit unwrapping from variable types") {
+                let definition = try? Factory(type(
+                    variables: [injectableVariable(name: "foo", typeName: "Foo!")]
+                ))
+                expect(definition?.members.first?.name) == "fooProvider"
+                expect(definition?.members.first?.typeName) == "Provider<Foo>"
+            }
         }
         describe("variables") {
             it("contains injectable variables") {

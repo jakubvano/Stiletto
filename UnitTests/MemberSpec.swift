@@ -14,6 +14,14 @@ class MemberSpec: QuickSpec {
                 let member = try? Member(Variable(typeName: TypeName("Foo"), type: Type(name: "Foo")))
                 expect(member?.typeName) == "Provider<Foo>"
             }
+            it("ignores implicit unwrapping from name") {
+                let member = try? Member(Variable(typeName: TypeName("Foo!"), type: Type(name: "Foo!")))
+                expect(member?.name) == "fooProvider"
+            }
+            it("ignores implicit unwrapping from type name") {
+                let member = try? Member(Variable(typeName: TypeName("Foo!"), type: Type(name: "Foo!")))
+                expect(member?.typeName) == "Provider<Foo>"
+            }
         }
         describe("type") {
             it("throws if not type available") {
@@ -29,6 +37,9 @@ class MemberSpec: QuickSpec {
         describe("member name creation") {
             it("returns correct value") {
                 expect(Member.name(for: "Foo")) == "fooProvider"
+            }
+            it("ignores implicit unwrapping") {
+                expect(Member.name(for: "Foo!")) == "fooProvider"
             }
         }
     }

@@ -22,10 +22,14 @@ struct Member: Equatable {
     }
 
     static func name(for typeName: String) -> String {
-        return Utils.camelCased(typeName) + "Provider"
+        return Utils.camelCased(clean(typeName)) + "Provider"
     }
 
     static func typeName(for typeName: String) -> String {
-        return "Provider<\(typeName)>"
+        return "Provider<\(clean(typeName))>"
+    }
+
+    static func clean(_ name: String) -> String {
+        return name.replacingOccurrences(of: "!", with: "")
     }
 }
