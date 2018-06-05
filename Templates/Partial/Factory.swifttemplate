@@ -17,6 +17,10 @@ private final class <%= factory.implementationName %>: <%= factory.interfaceName
             .map { "\($0.name): \(Member.name(for: $0.typeName.name)).instance" }
             .joined(separator: ", ")
       -%>
-        return <%= factory.instanceTypeName %>.<%= factory.constructor.callName %>(<%= parameters %>)
+        let instance = <%= factory.instanceTypeName %>.<%= factory.constructor.callName %>(<%= parameters %>)
+      <%_ for variable in factory.variables { -%>
+        instance.<%= variable.name %> = <%= Member.name(for: variable.typeName.name) %>.instance
+      <%_ } -%>
+        return instance
     }
 }

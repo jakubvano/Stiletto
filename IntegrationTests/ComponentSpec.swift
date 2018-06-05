@@ -13,7 +13,7 @@ class ComponentSpec: QuickSpec {
         }
         describe("property injection") {
             it("injects annotated implicitly unwrapped property") {
-                expect(component.parent.office).notTo(beNil())
+                expect(component.child.school).notTo(beNil())
             }
         }
     }
@@ -32,14 +32,14 @@ class Building {
 
 class Parent {
     // sourcery: Inject
-    var office: Building!
-
-    // sourcery: Inject
     init(home: Building) {}
 }
 
 class Child {
     let parent: Parent?
+
+    // sourcery: Inject
+    var school: Building!
 
     // sourcery: Inject
     init(parent: Parent) { self.parent = parent }
