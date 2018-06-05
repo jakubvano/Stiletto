@@ -76,6 +76,17 @@ class FactorySpec: QuickSpec {
                 ))
                 expect(definition?.members).to(beEmpty())
             }
+            it("does not contain duplicities") {
+                let definition = try? Factory(type(
+                    methods: [Method(
+                        name: "init",
+                        parameters: [MethodParameter(name: "foo", typeName: TypeName("Foo"), type: Type(name: "Foo"))],
+                        annotations: ["Inject": NSObject()]
+                    )],
+                    variables: [injectableVariable(name: "foooo", typeName: "Foo")]
+                ))
+                expect(definition?.members).to(haveCount(1))
+            }
         }
         describe("variables") {
             it("contains injectable variables") {

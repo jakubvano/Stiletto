@@ -24,6 +24,7 @@ struct Factory {
         self.instanceTypeName = type.name
         self.constructor = constructors[0]
         self.variables = type.variables.filter(Utils.isInjectable)
-        self.members = try constructor.parameters.map(Member.init) + variables.map(Member.init)
+        self.members = (try constructor.parameters.map(Member.init) + variables.map(Member.init))
+            .reduce([], Utils.appendIfNew)
     }
 }

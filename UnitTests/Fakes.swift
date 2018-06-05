@@ -35,3 +35,19 @@ let typeD = Type(
         annotations: ["Inject": NSObject()]
     )]
 )
+
+let typeE = Type(
+    name: "E",
+    variables: [
+        Variable(
+            name: "a",
+            typeName: TypeName(typeA.name),
+            type: typeA,
+            annotations: ["Inject": NSObject()]
+        )
+    ],
+    methods: [Method(
+        name: "init",
+        annotations: ["Inject": NSObject()]
+    )]
+)

@@ -1,3 +1,5 @@
+// swiftlint:disable function_body_length
+
 import Quick
 import Nimble
 import SourceryRuntime
@@ -34,6 +36,11 @@ class ComponentSpec: QuickSpec {
                 let type = Type(variables: [Variable(typeName: TypeName(typeC.name), type: typeC)])
                 let memberTypes = try? Component(type).members.map { $0.type }
                 expect(memberTypes).to(contain(typeA))
+            }
+            it("contains property dependencies of variables") {
+                let type = Type(variables: [Variable(typeName: TypeName(typeE.name), type: typeE)])
+                let memberTypes = try? Component(type).members.map { $0.type }
+                expect(memberTypes).to(contain([typeE, typeA]))
             }
             it("does not contain duplicities") {
                 let type = Type(variables: [Variable(typeName: TypeName(typeD.name), type: typeD)])
