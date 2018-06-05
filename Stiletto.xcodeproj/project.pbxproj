@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2795A58EB11CEF254D4640C7 /* Pods_Stiletto_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */; };
 		B64722A2696F234816C9671E /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27E4965A1AA31D8230A6CFC /* Pods_UnitTests.framework */; };
 		C8B78D38739F2698EE0D47CC /* Pods_IntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0BA2F103F4122E22AEB67D /* Pods_IntegrationTests.framework */; };
 		CD05755520C3DC2500C6995B /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05754D20C3015E00C6995B /* Factory.swift */; };
@@ -136,7 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */,
-				2795A58EB11CEF254D4640C7 /* Pods_Stiletto_Tests.framework in Frameworks */,
 				C8B78D38739F2698EE0D47CC /* Pods_IntegrationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,6 +57,42 @@ class FactorySpec: QuickSpec {
                 expect(definition?.members.first?.name) == "barProvider"
                 expect(definition?.members.first?.typeName) == "Provider<Bar>"
             }
+            it("contains injectable variables") {
+                let definition = try? Factory(type(
+                    variables: [
+                        injectableVariable(name: "foo", typeName: "Foo"),
+                        injectableVariable(name: "bar", typeName: "Bar")
+                    ]
+                ))
+                expect(definition?.members).to(haveCount(2))
+                expect(definition?.members.first?.name) == "fooProvider"
+                expect(definition?.members.last?.typeName) == "Provider<Bar>"
+            }
+            it("does not contain non-injectable variables") {
+                let definition = try? Factory(type(
+                    variables: [
+                        Variable(name: "foo", typeName: TypeName("Foo"), type: Type(name: "foo"))
+                    ]
+                ))
+                expect(definition?.members).to(beEmpty())
+            }
+        }
+        describe("variables") {
+            it("contains injectable variables") {
+                let variables = [
+                    injectableVariable(name: "foo", typeName: "Foo"),
+                    injectableVariable(name: "bar", typeName: "Bar")
+                ]
+                let definition = try? Factory(type(variables: variables))
+                expect(definition?.variables) == variables
+            }
+            it("does not contain non-injectable variables") {
+                let variables = [
+                    Variable(name: "foo", typeName: TypeName("Foo"), type: Type(name: "foo"))
+                ]
+                let definition = try? Factory(type(variables: variables))
+                expect(definition?.variables).to(beEmpty())
+            }
         }
         describe("errors") {
             it("throws if no methods available") {
@@ -110,11 +146,22 @@ class FactorySpec: QuickSpec {
     }
 }
 
+private func injectableVariable(name: String, typeName: String, isStatic: Bool = false) -> Variable {
+    return Variable(
+        name: name,
+        typeName: TypeName(typeName),
+        type: Type(name: typeName),
+        isStatic: isStatic,
+        annotations: ["Inject": NSObject()]
+    )
+}
+
 private func type(
     name: String = "",
-    methods: [Method] = [Method(name: "init", annotations: ["Inject": NSObject()])]
+    methods: [Method] = [Method(name: "init", annotations: ["Inject": NSObject()])],
+    variables: [Variable] = []
 ) -> Type {
-    return Type(name: name, methods: methods)
+    return Type(name: name, variables: variables, methods: methods)
 }
 
 typealias Method = SourceryRuntime.Method

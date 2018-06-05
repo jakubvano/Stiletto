@@ -11,6 +11,11 @@ class ComponentSpec: QuickSpec {
                 expect(component.child.parent).notTo(beNil())
             }
         }
+        describe("property injection") {
+            it("injects annotated implicitly unwrapped property") {
+                expect(component.parent.office).notTo(beNil())
+            }
+        }
     }
 }
 
@@ -26,6 +31,9 @@ class Building {
 }
 
 class Parent {
+    // sourcery: Inject
+    var office: Building!
+
     // sourcery: Inject
     init(home: Building) {}
 }
