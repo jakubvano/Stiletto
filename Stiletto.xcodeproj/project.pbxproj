@@ -14,9 +14,6 @@
 		CD05755920C3DD2B00C6995B /* ComponentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53820B8619300FBB87F /* ComponentSpec.swift */; };
 		CD05756320C3DD8600C6995B /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CD05756A20C3DEF100C6995B /* FactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05756920C3DEF100C6995B /* FactorySpec.swift */; };
-		CD05756C20C3E55500C6995B /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; };
-		CD05756D20C3E56900C6995B /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; };
-		CD05756F20C3E57F00C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD05758720C4046800C6995B /* ComponentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05758620C4046800C6995B /* ComponentSpec.swift */; };
 		CD05758C20C4055900C6995B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05758A20C4054100C6995B /* Member.swift */; };
 		CD05758D20C4055C00C6995B /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05758820C4047C00C6995B /* Component.swift */; };
@@ -25,7 +22,10 @@
 		CD05759620C4207C00C6995B /* StilettoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759520C4207C00C6995B /* StilettoSpec.swift */; };
 		CD05759820C4231C00C6995B /* Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05759720C4231C00C6995B /* Fakes.swift */; };
 		CD0575A220C4320600C6995B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0575A120C4320600C6995B /* Utils.swift */; };
-		CD0575A420C43B1600C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = CD05751020C2A5A600C6995B /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD0F20F920C8E37600A67616 /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */; };
+		CD0F20FA20C8E39C00A67616 /* SourceryRuntime.framework in Embed Other Frameworks */ = {isa = PBXBuildFile; fileRef = CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD0F20FB20C8E3AB00A67616 /* SourceryRuntime.framework in Embed Other Frameworks */ = {isa = PBXBuildFile; fileRef = CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD0F20FC20C8E3DF00A67616 /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -49,26 +49,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CD05756E20C3E56E00C6995B /* Copy Carthage Frameworks */ = {
+		CD05756E20C3E56E00C6995B /* Embed Other Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD05756F20C3E57F00C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */,
+				CD0F20FA20C8E39C00A67616 /* SourceryRuntime.framework in Embed Other Frameworks */,
 			);
-			name = "Copy Carthage Frameworks";
+			name = "Embed Other Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD0575A320C43B0400C6995B /* Copy Carthage Frameworks */ = {
+		CD0575A320C43B0400C6995B /* Embed Other Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD0575A420C43B1600C6995B /* SourceryRuntime.framework in Copy Carthage Frameworks */,
+				CD0F20FB20C8E3AB00A67616 /* SourceryRuntime.framework in Embed Other Frameworks */,
 			);
-			name = "Copy Carthage Frameworks";
+			name = "Embed Other Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -76,7 +76,6 @@
 /* Begin PBXFileReference section */
 		1E2792BADE2D5863228204FC /* Pods-Stiletto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto/Pods-Stiletto.release.xcconfig"; sourceTree = "<group>"; };
 		22F13B837DBD8092CEFB679D /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
-		28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stiletto_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		516F096072858C0B8D51046E /* Pods_Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C59992AD2F55A40B118D9D /* Pods-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0BA2F103F4122E22AEB67D /* Pods_IntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +83,6 @@
 		8F82673939066E75BC1F3808 /* Pods-Stiletto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stiletto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stiletto/Pods-Stiletto.debug.xcconfig"; sourceTree = "<group>"; };
 		B27E4965A1AA31D8230A6CFC /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DF7A4A874BC50721FB55B9 /* Pods-IntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IntegrationTests/Pods-IntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CD05751020C2A5A600C6995B /* SourceryRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceryRuntime.framework; path = Carthage/Build/Mac/SourceryRuntime.framework; sourceTree = "<group>"; };
 		CD05754D20C3015E00C6995B /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		CD05754F20C304E500C6995B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CD05755E20C3DD8600C6995B /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +99,7 @@
 		CD05759520C4207C00C6995B /* StilettoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StilettoSpec.swift; sourceTree = "<group>"; };
 		CD05759720C4231C00C6995B /* Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakes.swift; sourceTree = "<group>"; };
 		CD0575A120C4320600C6995B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceryRuntime.framework; path = Pods/Sourcery/bin/Sourcery.app/Contents/Frameworks/SourceryRuntime.framework; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,9 +114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD05756C20C3E55500C6995B /* SourceryRuntime.framework in Frameworks */,
 				CD05756320C3DD8600C6995B /* Stiletto.framework in Frameworks */,
 				B64722A2696F234816C9671E /* Pods_UnitTests.framework in Frameworks */,
+				CD0F20FC20C8E3DF00A67616 /* SourceryRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD05756D20C3E56900C6995B /* SourceryRuntime.framework in Frameworks */,
 				DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */,
+				CD0F20F920C8E37600A67616 /* SourceryRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +144,8 @@
 		2611C8DB79C0994E5529E78D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD05751020C2A5A600C6995B /* SourceryRuntime.framework */,
+				CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */,
 				516F096072858C0B8D51046E /* Pods_Stiletto.framework */,
-				28FD772090FDEB024B73D43D /* Pods_Stiletto_Tests.framework */,
 				B27E4965A1AA31D8230A6CFC /* Pods_UnitTests.framework */,
 				7C0BA2F103F4122E22AEB67D /* Pods_IntegrationTests.framework */,
 			);
@@ -268,7 +266,7 @@
 				CD05755B20C3DD8600C6995B /* Frameworks */,
 				CD05755C20C3DD8600C6995B /* Resources */,
 				44822F96D877655B2CDBDF64 /* [CP] Embed Pods Frameworks */,
-				CD05756E20C3E56E00C6995B /* Copy Carthage Frameworks */,
+				CD05756E20C3E56E00C6995B /* Embed Other Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,7 +309,7 @@
 				CDD9F51C20B85D1100FBB87F /* Frameworks */,
 				CDD9F51D20B85D1100FBB87F /* Resources */,
 				BCC91960B827C9F933CE36FD /* [CP] Embed Pods Frameworks */,
-				CD0575A320C43B0400C6995B /* Copy Carthage Frameworks */,
+				CD0575A320C43B0400C6995B /* Embed Other Frameworks */,
 			);
 			buildRules = (
 			);
@@ -586,7 +584,7 @@
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Pods/Sourcery/bin/Sourcery.app/Contents/Frameworks",
 				);
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -609,7 +607,7 @@
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Pods/Sourcery/bin/Sourcery.app/Contents/Frameworks",
 				);
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -756,7 +754,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Pods/Sourcery/bin/Sourcery.app/Contents/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
@@ -787,7 +785,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Pods/Sourcery/bin/Sourcery.app/Contents/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
