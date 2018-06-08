@@ -1,0 +1,8 @@
+sources:
+  - .
+templates:
+  include:
+    - ../Pods/Sourcery/Templates/AutoEquatable.stencil
+    - ../Pods/Sourcery/Templates/AutoHashable.stencil
+output:
+   GeneratedCode.swift

@@ -2,7 +2,8 @@ use_frameworks!
 
 pod 'SwiftLint'
 
-target 'Stiletto' do 
+target 'Stiletto' do
+    pod 'SwiftGraph'
 end
 
 target 'IntegrationTests' do
