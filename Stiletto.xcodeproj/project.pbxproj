@@ -17,6 +17,10 @@
 		CD0F20FC20C8E3DF00A67616 /* SourceryRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */; };
 		CD0F213A20CADF0400A67616 /* PhantomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F213920CADF0400A67616 /* PhantomProtocols.swift */; };
 		CD22860920CAE12400CB3C83 /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0F213720CADDF900A67616 /* GeneratedCode.swift */; };
+		CDA71ADC20CD7EB200603438 /* BindingKeyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71ADB20CD7EB200603438 /* BindingKeyFactory.swift */; };
+		CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */; };
+		CDA71AE120CD83AD00603438 /* StilettoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71ADF20CD830C00603438 /* StilettoError.swift */; };
+		CDA71AE420CD85FD00603438 /* BindingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AE220CD85F700603438 /* BindingKey.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -79,6 +83,10 @@
 		CD0F20F820C8E37600A67616 /* SourceryRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SourceryRuntime.framework; path = Pods/Sourcery/bin/Sourcery.app/Contents/Frameworks/SourceryRuntime.framework; sourceTree = "<group>"; };
 		CD0F213720CADDF900A67616 /* GeneratedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedCode.swift; sourceTree = "<group>"; };
 		CD0F213920CADF0400A67616 /* PhantomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhantomProtocols.swift; sourceTree = "<group>"; };
+		CDA71ADB20CD7EB200603438 /* BindingKeyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingKeyFactory.swift; sourceTree = "<group>"; };
+		CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingKeyFactorySpec.swift; sourceTree = "<group>"; };
+		CDA71ADF20CD830C00603438 /* StilettoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StilettoError.swift; sourceTree = "<group>"; };
+		CDA71AE220CD85F700603438 /* BindingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingKey.swift; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CD05756220C3DD8600C6995B /* Info.plist */,
+				CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -179,6 +188,9 @@
 				CDD9F51A20B85D1100FBB87F /* Info.plist */,
 				CD0F213720CADDF900A67616 /* GeneratedCode.swift */,
 				CD0F213920CADF0400A67616 /* PhantomProtocols.swift */,
+				CDA71AE220CD85F700603438 /* BindingKey.swift */,
+				CDA71ADB20CD7EB200603438 /* BindingKeyFactory.swift */,
+				CDA71ADF20CD830C00603438 /* StilettoError.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -282,6 +294,7 @@
 				TargetAttributes = {
 					CD05755D20C3DD8600C6995B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					CDD9F51520B85D1100FBB87F = {
 						CreatedOnToolsVersion = 9.3;
@@ -481,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,8 +502,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA71AE120CD83AD00603438 /* StilettoError.swift in Sources */,
 				CD0F213A20CADF0400A67616 /* PhantomProtocols.swift in Sources */,
+				CDA71ADC20CD7EB200603438 /* BindingKeyFactory.swift in Sources */,
 				CD22860920CAE12400CB3C83 /* GeneratedCode.swift in Sources */,
+				CDA71AE420CD85FD00603438 /* BindingKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67C59992AD2F55A40B118D9D /* Pods-UnitTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
@@ -537,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakubvano.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -545,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22F13B837DBD8092CEFB679D /* Pods-UnitTests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HZ49PR84ZP;
