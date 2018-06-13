@@ -1,0 +1,8 @@
+sources:
+  - ../Sources
+templates:
+  include:
+    - .GeneratedCodeImports.stencil
+    - ../Pods/Sourcery/Templates/AutoMockable.stencil
+output:
+   GeneratedCode.swift

@@ -2,4 +2,5 @@ excluded:
   - Carthage
   - Pods
   - IntegrationTests/GeneratedCode.swift
+  - UnitTests/GeneratedCode.swift
   - Sources/GeneratedCode.swift
