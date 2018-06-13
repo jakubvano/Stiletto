@@ -15,7 +15,7 @@ class BindingFactorySpec: QuickSpec {
             keyFactory = BindingKeyFactoryMock()
             keyFactory.makeKeyForReturnValue = BindingKey(type: Type())
             scopeParser = ScopeParserMock()
-            scopeParser.getScopeFromReturnValue = Type()
+            scopeParser.getScopeFromReturnValue = Protocol()
             dependencyFactory = DependencyFactoryMock()
             dependencyFactory.makeDependenciesFromReturnValue = Set()
             dependencyFactory.makeMemberDependenciesFromReturnValue = Set()
@@ -64,7 +64,7 @@ class BindingFactorySpec: QuickSpec {
             }
             describe("scope") {
                 it("gets scope using given scope parser") {
-                    scopeParser.getScopeFromReturnValue = Type(name: "Scope")
+                    scopeParser.getScopeFromReturnValue = Protocol(name: "Scope")
                     let binding = try? factory.makeInjectionBinding(for: makeType(), with: makeConstructor())
                     expect(binding?.scope) == scopeParser.getScopeFromReturnValue
                 }
@@ -72,6 +72,11 @@ class BindingFactorySpec: QuickSpec {
                     let type = makeType(name: "Foo")
                     _ = try? factory.makeInjectionBinding(for: type, with: makeConstructor())
                     expect(scopeParser.getScopeFromReceivedType) == type
+                }
+                it("throws given throwing scope parser") {
+                    scopeParser.getScopeFromThrowableError = Error()
+                    expect { try factory.makeInjectionBinding(for: makeType(), with: makeConstructor()) }
+                        .to(throwError())
                 }
             }
             describe("provisionDependencies") {

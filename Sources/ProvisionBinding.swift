@@ -5,7 +5,7 @@ struct ProvisionBinding: ContributionBinding {
     let contributedType: Type
     let key: BindingKey
     let kind: BindingKind
-    let scope: Type?
+    let scope: Protocol?
     let provisionDependencies: Set<DependencyRequest>
     let membersInjectionDependencies: Set<DependencyRequest>
 }

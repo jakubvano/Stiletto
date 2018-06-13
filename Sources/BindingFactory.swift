@@ -17,7 +17,7 @@ final class BindingFactoryImpl: BindingFactory {
             contributedType: type,
             key: try keyFactory.makeKey(for: type),
             kind: .injection,
-            scope: scopeParser.getScope(from: type),
+            scope: try scopeParser.getScope(from: type),
             provisionDependencies: dependencyFactory.makeDependencies(from: constructor),
             membersInjectionDependencies: dependencyFactory.makeMemberDependencies(from: type)
         )

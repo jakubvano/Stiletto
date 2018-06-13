@@ -30,6 +30,7 @@
 		CDD72C9320D193E800ED15AD /* ScopeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9120D192D200ED15AD /* ScopeParser.swift */; };
 		CDD72C9620D1963300ED15AD /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9420D195ED00ED15AD /* DependencyFactory.swift */; };
 		CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */; };
+		CDD72C9A20D19BCE00ED15AD /* ScopeParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9920D19BCE00ED15AD /* ScopeParserSpec.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -105,6 +106,7 @@
 		CDD72C9120D192D200ED15AD /* ScopeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeParser.swift; sourceTree = "<group>"; };
 		CDD72C9420D195ED00ED15AD /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
 		CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionBindingSpec.swift; sourceTree = "<group>"; };
+		CDD72C9920D19BCE00ED15AD /* ScopeParserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeParserSpec.swift; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */,
 				CDD72C8D20D1855A00ED15AD /* BindingFactorySpec.swift */,
 				CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */,
+				CDD72C9920D19BCE00ED15AD /* ScopeParserSpec.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 			files = (
 				CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */,
 				CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */,
+				CDD72C9A20D19BCE00ED15AD /* ScopeParserSpec.swift in Sources */,
 				CDD72C8E20D1855A00ED15AD /* BindingFactorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
