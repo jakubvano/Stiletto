@@ -1,0 +1,21 @@
+{% for type in types.all where type|annotated:"AutoInit" %}
+extension {{ type.name }} {
+    {%if type.accessLevel == "public" %}public {% endif %}convenience init(
+	{% for variable in type.allVariables where not variable.defaultValue and not variable.isComputed %}
+        {{ variable.name }}: {{ variable.typeName }}{% if not forloop.last %},{% endif %}
+	{% endfor %}
+    ) {
+	{% if type.supertype %}
+        super.init(
+		{% for variable in type.supertype.allVariables where not variable.defaultValue and not variable.isComputed %}
+            {{ variable.name }}: {{ variable.name }}{% if not forloop.last %},{% endif %}
+		{% endfor %}
+        )
+	{% endif %}
+		self.init()
+	{% for variable in type.variables where not variable.defaultValue and not variable.isComputed %}
+        self.{{ variable.name }} = {{ variable.name }}
+	{% endfor %}
+    }
+}
+{% endfor %}

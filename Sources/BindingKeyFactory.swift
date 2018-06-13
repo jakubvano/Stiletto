@@ -1,5 +1,6 @@
 import SourceryRuntime
 
+// sourcery: AutoMockable
 protocol BindingKeyFactory {
     func makeKey(for type: Type) throws -> BindingKey
 }

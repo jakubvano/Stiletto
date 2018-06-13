@@ -2,7 +2,10 @@ sources:
   - .
 templates:
   include:
+    - ../Templates/Imports.stencil
+    - ../Templates/AutoInit.stencil
     - ../Pods/Sourcery/Templates/AutoEquatable.stencil
     - ../Pods/Sourcery/Templates/AutoHashable.stencil
+    - ../Pods/Sourcery/Templates/AutoMockable.stencil
 output:
    GeneratedCode.swift

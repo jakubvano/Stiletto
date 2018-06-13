@@ -21,6 +21,15 @@
 		CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */; };
 		CDA71AE120CD83AD00603438 /* StilettoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71ADF20CD830C00603438 /* StilettoError.swift */; };
 		CDA71AE420CD85FD00603438 /* BindingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AE220CD85F700603438 /* BindingKey.swift */; };
+		CDA71AE620CD868300603438 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AE520CD868300603438 /* Binding.swift */; };
+		CDA71AE820CD879D00603438 /* DependencyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AE720CD879D00603438 /* DependencyRequest.swift */; };
+		CDA71AEA20CD8B3400603438 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AE920CD8B3400603438 /* Scope.swift */; };
+		CDA71AEC20CD8BA400603438 /* BindingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AEB20CD8BA400603438 /* BindingFactory.swift */; };
+		CDA71AEE20CD8F8C00603438 /* ProvisionBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA71AED20CD8F8C00603438 /* ProvisionBinding.swift */; };
+		CDD72C8E20D1855A00ED15AD /* BindingFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C8D20D1855A00ED15AD /* BindingFactorySpec.swift */; };
+		CDD72C9320D193E800ED15AD /* ScopeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9120D192D200ED15AD /* ScopeParser.swift */; };
+		CDD72C9620D1963300ED15AD /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9420D195ED00ED15AD /* DependencyFactory.swift */; };
+		CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
@@ -87,6 +96,15 @@
 		CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingKeyFactorySpec.swift; sourceTree = "<group>"; };
 		CDA71ADF20CD830C00603438 /* StilettoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StilettoError.swift; sourceTree = "<group>"; };
 		CDA71AE220CD85F700603438 /* BindingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingKey.swift; sourceTree = "<group>"; };
+		CDA71AE520CD868300603438 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		CDA71AE720CD879D00603438 /* DependencyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRequest.swift; sourceTree = "<group>"; };
+		CDA71AE920CD8B3400603438 /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
+		CDA71AEB20CD8BA400603438 /* BindingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingFactory.swift; sourceTree = "<group>"; };
+		CDA71AED20CD8F8C00603438 /* ProvisionBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionBinding.swift; sourceTree = "<group>"; };
+		CDD72C8D20D1855A00ED15AD /* BindingFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingFactorySpec.swift; sourceTree = "<group>"; };
+		CDD72C9120D192D200ED15AD /* ScopeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeParser.swift; sourceTree = "<group>"; };
+		CDD72C9420D195ED00ED15AD /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
+		CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionBindingSpec.swift; sourceTree = "<group>"; };
 		CDD9F51620B85D1100FBB87F /* Stiletto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stiletto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD9F51A20B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F51F20B85D1100FBB87F /* IntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +174,8 @@
 			children = (
 				CD05756220C3DD8600C6995B /* Info.plist */,
 				CDA71ADD20CD7F9000603438 /* BindingKeyFactorySpec.swift */,
+				CDD72C8D20D1855A00ED15AD /* BindingFactorySpec.swift */,
+				CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -190,7 +210,14 @@
 				CD0F213920CADF0400A67616 /* PhantomProtocols.swift */,
 				CDA71AE220CD85F700603438 /* BindingKey.swift */,
 				CDA71ADB20CD7EB200603438 /* BindingKeyFactory.swift */,
+				CDA71AE520CD868300603438 /* Binding.swift */,
+				CDA71AE720CD879D00603438 /* DependencyRequest.swift */,
+				CDA71AED20CD8F8C00603438 /* ProvisionBinding.swift */,
 				CDA71ADF20CD830C00603438 /* StilettoError.swift */,
+				CDA71AE920CD8B3400603438 /* Scope.swift */,
+				CDD72C9120D192D200ED15AD /* ScopeParser.swift */,
+				CDD72C9420D195ED00ED15AD /* DependencyFactory.swift */,
+				CDA71AEB20CD8BA400603438 /* BindingFactory.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -495,6 +522,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */,
+				CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */,
+				CDD72C8E20D1855A00ED15AD /* BindingFactorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,10 +531,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA71AEA20CD8B3400603438 /* Scope.swift in Sources */,
 				CDA71AE120CD83AD00603438 /* StilettoError.swift in Sources */,
+				CDA71AE820CD879D00603438 /* DependencyRequest.swift in Sources */,
+				CDA71AE620CD868300603438 /* Binding.swift in Sources */,
 				CD0F213A20CADF0400A67616 /* PhantomProtocols.swift in Sources */,
+				CDA71AEE20CD8F8C00603438 /* ProvisionBinding.swift in Sources */,
 				CDA71ADC20CD7EB200603438 /* BindingKeyFactory.swift in Sources */,
 				CD22860920CAE12400CB3C83 /* GeneratedCode.swift in Sources */,
+				CDA71AEC20CD8BA400603438 /* BindingFactory.swift in Sources */,
+				CDD72C9620D1963300ED15AD /* DependencyFactory.swift in Sources */,
+				CDD72C9320D193E800ED15AD /* ScopeParser.swift in Sources */,
 				CDA71AE420CD85FD00603438 /* BindingKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
