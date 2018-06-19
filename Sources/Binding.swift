@@ -16,7 +16,7 @@ protocol ContributionBinding: Binding {
     var contributedType: Type { get }
 }
 
-struct ProvisionBinding: ContributionBinding {
+struct ProvisionBinding: ContributionBinding, AutoHashable {
     let requiresModuleInstance: Bool
     let contributedType: Type
     let key: BindingKey

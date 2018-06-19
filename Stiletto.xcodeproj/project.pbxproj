@@ -30,6 +30,10 @@
 		CDD72C9D20D1A73900ED15AD /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD72C9C20D1A73900ED15AD /* GeneratedCode.swift */; };
 		CDD9F52020B85D1100FBB87F /* Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD9F51620B85D1100FBB87F /* Stiletto.framework */; };
 		CDD9F53220B85EFB00FBB87F /* GeneratedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */; };
+		CDF01C8F20D972EE00A5D777 /* BindingGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C8E20D972EE00A5D777 /* BindingGraph.swift */; };
+		CDF01C9120D973FC00A5D777 /* BindingGraphFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */; };
+		CDF01C9420D9756100A5D777 /* BindingExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9220D9755C00A5D777 /* BindingExtractor.swift */; };
+		CDF01C9720D97F8B00A5D777 /* SourceryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +111,10 @@
 		CDD9F52620B85D1100FBB87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD9F53120B85EFB00FBB87F /* GeneratedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedCode.swift; sourceTree = "<group>"; };
 		CDD9F53820B8619300FBB87F /* ComponentSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentSpec.swift; sourceTree = "<group>"; };
+		CDF01C8E20D972EE00A5D777 /* BindingGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingGraph.swift; sourceTree = "<group>"; };
+		CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingGraphFactorySpec.swift; sourceTree = "<group>"; };
+		CDF01C9220D9755C00A5D777 /* BindingExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtractor.swift; sourceTree = "<group>"; };
+		CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceryExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,7 @@
 				CDD72C9720D19A4600ED15AD /* ProvisionBindingSpec.swift */,
 				CDD72C9920D19BCE00ED15AD /* ScopeParserSpec.swift */,
 				CDD72C9C20D1A73900ED15AD /* GeneratedCode.swift */,
+				CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -212,6 +221,9 @@
 				CDA71ADF20CD830C00603438 /* StilettoError.swift */,
 				CDA71AE920CD8B3400603438 /* Scope.swift */,
 				CDA71AEB20CD8BA400603438 /* BindingFactory.swift */,
+				CDF01C8E20D972EE00A5D777 /* BindingGraph.swift */,
+				CDF01C9220D9755C00A5D777 /* BindingExtractor.swift */,
+				CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -535,6 +547,7 @@
 				CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */,
 				CDD72C9A20D19BCE00ED15AD /* ScopeParserSpec.swift in Sources */,
 				CDD72C8E20D1855A00ED15AD /* BindingFactorySpec.swift in Sources */,
+				CDF01C9120D973FC00A5D777 /* BindingGraphFactorySpec.swift in Sources */,
 				CDD72C9D20D1A73900ED15AD /* GeneratedCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,9 +556,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF01C8F20D972EE00A5D777 /* BindingGraph.swift in Sources */,
 				CDA71AEA20CD8B3400603438 /* Scope.swift in Sources */,
 				CDA71AE120CD83AD00603438 /* StilettoError.swift in Sources */,
 				CDA71AE820CD879D00603438 /* DependencyRequest.swift in Sources */,
+				CDF01C9720D97F8B00A5D777 /* SourceryExtensions.swift in Sources */,
+				CDF01C9420D9756100A5D777 /* BindingExtractor.swift in Sources */,
 				CDA71AE620CD868300603438 /* Binding.swift in Sources */,
 				CD0F213A20CADF0400A67616 /* PhantomProtocols.swift in Sources */,
 				CD22860920CAE12400CB3C83 /* GeneratedCode.swift in Sources */,
