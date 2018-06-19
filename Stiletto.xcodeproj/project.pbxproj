@@ -34,6 +34,8 @@
 		CDF01C9120D973FC00A5D777 /* BindingGraphFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */; };
 		CDF01C9420D9756100A5D777 /* BindingExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9220D9755C00A5D777 /* BindingExtractor.swift */; };
 		CDF01C9720D97F8B00A5D777 /* SourceryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */; };
+		CDF01C9920D9811100A5D777 /* BindingExtractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9820D9811100A5D777 /* BindingExtractorSpec.swift */; };
+		CDF01C9B20D9824B00A5D777 /* Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9A20D9824B00A5D777 /* Fakes.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingGraphFactorySpec.swift; sourceTree = "<group>"; };
 		CDF01C9220D9755C00A5D777 /* BindingExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtractor.swift; sourceTree = "<group>"; };
 		CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceryExtensions.swift; sourceTree = "<group>"; };
+		CDF01C9820D9811100A5D777 /* BindingExtractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtractorSpec.swift; sourceTree = "<group>"; };
+		CDF01C9A20D9824B00A5D777 /* Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 				CDD72C9920D19BCE00ED15AD /* ScopeParserSpec.swift */,
 				CDD72C9C20D1A73900ED15AD /* GeneratedCode.swift */,
 				CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */,
+				CDF01C9820D9811100A5D777 /* BindingExtractorSpec.swift */,
+				CDF01C9A20D9824B00A5D777 /* Fakes.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -543,6 +549,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF01C9B20D9824B00A5D777 /* Fakes.swift in Sources */,
+				CDF01C9920D9811100A5D777 /* BindingExtractorSpec.swift in Sources */,
 				CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */,
 				CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */,
 				CDD72C9A20D19BCE00ED15AD /* ScopeParserSpec.swift in Sources */,

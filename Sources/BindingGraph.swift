@@ -9,7 +9,7 @@ private struct _BindingGraph: BindingGraph {
 }
 
 protocol BindingGraphFactory {
-    func makeGraph() -> BindingGraph
+    func makeGraph() throws -> BindingGraph
 }
 
 // sourcery: AutoInit
@@ -17,8 +17,8 @@ final class BindingGraphFactoryImpl: BindingGraphFactory {
     var types: Types!
     var bindingExtractor: BindingExtractor!
 
-    func makeGraph() -> BindingGraph {
-        let bindings = types.all
+    func makeGraph() throws -> BindingGraph {
+        let bindings = try types.all
             .filter { !$0.isModule && !$0.isComponent }
             .map(bindingExtractor.extractInjectionBindings)
             .reduce(Set<ProvisionBinding>()) { $0.union($1) }

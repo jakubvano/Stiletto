@@ -119,5 +119,3 @@ private func makeType(name: String = "") -> Type {
 private func makeConstructor(name: String = "") -> SourceryRuntime.Method {
     return SourceryRuntime.Method(name: name)
 }
-
-private struct Error: Swift.Error {}
