@@ -7,8 +7,7 @@ class ScopeParserSpec: QuickSpec {
     override func spec() {
         var parser: ScopeParserImpl!
         beforeEach {
-            parser = ScopeParserImpl()
-            parser.types = Types(types: [])
+            parser = ScopeParserImpl(types: Types(types: []))
         }
 
         context("given type annotated with valid scope") {

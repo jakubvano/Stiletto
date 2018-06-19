@@ -19,10 +19,11 @@ class BindingFactorySpec: QuickSpec {
             dependencyFactory = DependencyFactoryMock()
             dependencyFactory.makeDependenciesFromReturnValue = Set()
             dependencyFactory.makeMemberDependenciesFromReturnValue = Set()
-            factory = BindingFactoryImpl()
-            factory.keyFactory = keyFactory
-            factory.scopeParser = scopeParser
-            factory.dependencyFactory = dependencyFactory
+            factory = BindingFactoryImpl(
+                keyFactory: keyFactory,
+                scopeParser: scopeParser,
+                dependencyFactory: dependencyFactory
+            )
         }
 
         describe("makeInjectionBinding") {
