@@ -13,7 +13,8 @@ class BindingFactorySpec: QuickSpec {
         var dependencyFactory: DependencyFactoryMock!
         beforeEach {
             keyFactory = BindingKeyFactoryMock()
-            keyFactory.makeKeyForReturnValue = BindingKey(type: Type())
+            keyFactory.makeKeyForTypeReturnValue = BindingKey(type: Type())
+            keyFactory.makeKeyForVariableReturnValue = BindingKey(type: Type())
             scopeParser = ScopeParserMock()
             scopeParser.getScopeFromReturnValue = SourceryProtocol()
             dependencyFactory = DependencyFactoryMock()
@@ -48,17 +49,17 @@ class BindingFactorySpec: QuickSpec {
             }
             describe("key") {
                 it("creates key using given key factory") {
-                    keyFactory.makeKeyForReturnValue = BindingKey(type: Type(name: "Foo"))
+                    keyFactory.makeKeyForTypeReturnValue = BindingKey(type: Type(name: "Foo"))
                     let binding = try? factory.makeInjectionBinding(for: makeType(), with: makeConstructor())
-                    expect(binding?.key) == keyFactory.makeKeyForReturnValue
+                    expect(binding?.key) == keyFactory.makeKeyForTypeReturnValue
                 }
                 it("uses given type when requesting the key") {
                     let type = makeType(name: "Foo")
                     _ = try? factory.makeInjectionBinding(for: type, with: makeConstructor())
-                    expect(keyFactory.makeKeyForReceivedType) == type
+                    expect(keyFactory.makeKeyForTypeReceivedType) == type
                 }
                 it("throws given throwing key factory") {
-                    keyFactory.makeKeyForThrowableError = Error()
+                    keyFactory.makeKeyForTypeThrowableError = Error()
                     expect { try factory.makeInjectionBinding(for: makeType(), with: makeConstructor()) }
                         .to(throwError())
                 }
@@ -83,7 +84,7 @@ class BindingFactorySpec: QuickSpec {
             describe("provisionDependencies") {
                 it("gets dependencies using given dependency parser") {
                     dependencyFactory.makeDependenciesFromReturnValue = Set(
-                        [DependencyRequest(key: BindingKey(type: Type(name: "Foo")), kind: .instance)]
+                        [makeDependency(key: BindingKey(type: Type(name: "Foo")))]
                     )
                     let binding = try? factory.makeInjectionBinding(for: makeType(), with: makeConstructor())
                     expect(binding?.provisionDependencies) == dependencyFactory.makeDependenciesFromReturnValue
@@ -93,11 +94,16 @@ class BindingFactorySpec: QuickSpec {
                     _ = try? factory.makeInjectionBinding(for: makeType(), with: constructor)
                     expect(dependencyFactory.makeDependenciesFromReceivedMethod) == constructor
                 }
+                it("rethrows dependency factory error") {
+                    dependencyFactory.makeDependenciesFromThrowableError = Error()
+                    expect { try factory.makeInjectionBinding(for: makeType(), with: makeConstructor()) }
+                        .to(throwError())
+                }
             }
             describe("membersInjectionDependencies") {
                 it("gets dependencies using given dependency parser") {
                     dependencyFactory.makeMemberDependenciesFromReturnValue = Set(
-                        [DependencyRequest(key: BindingKey(type: Type(name: "Foo")), kind: .instance)]
+                        [makeDependency(key: BindingKey(type: Type(name: "Foo")))]
                     )
                     let binding = try? factory.makeInjectionBinding(for: makeType(), with: makeConstructor())
                     expect(binding?.membersInjectionDependencies)
@@ -107,6 +113,11 @@ class BindingFactorySpec: QuickSpec {
                     let type = makeType(name: "Foo")
                     _ = try? factory.makeInjectionBinding(for: type, with: makeConstructor())
                     expect(dependencyFactory.makeMemberDependenciesFromReceivedType) == type
+                }
+                it("rethrows dependency factory error") {
+                    dependencyFactory.makeMemberDependenciesFromThrowableError = Error()
+                    expect { try factory.makeInjectionBinding(for: makeType(), with: makeConstructor()) }
+                        .to(throwError())
                 }
             }
         }
@@ -119,4 +130,8 @@ private func makeType(name: String = "") -> Type {
 
 private func makeConstructor(name: String = "") -> SourceryMethod {
     return SourceryRuntime.Method(name: name)
+}
+
+private func makeDependency(key: BindingKey = BindingKey(type: Type())) -> DependencyRequest {
+    return DependencyRequest(key: key)
 }

@@ -12,12 +12,12 @@ final class BindingFactoryImpl: BindingFactory {
     var dependencyFactory: DependencyFactory!
 
     func makeInjectionBinding(for type: Type, with constructor: SourceryMethod) throws -> ProvisionBinding {
-        return ProvisionBinding(
+        return try ProvisionBinding(
             requiresModuleInstance: false,
             contributedType: type,
-            key: try keyFactory.makeKey(for: type),
+            key: keyFactory.makeKey(forType: type),
             kind: .injection,
-            scope: try scopeParser.getScope(from: type),
+            scope: scopeParser.getScope(from: type),
             provisionDependencies: dependencyFactory.makeDependencies(from: constructor),
             membersInjectionDependencies: dependencyFactory.makeMemberDependencies(from: type)
         )

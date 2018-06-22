@@ -36,6 +36,7 @@
 		CDF01C9720D97F8B00A5D777 /* SourceryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */; };
 		CDF01C9920D9811100A5D777 /* BindingExtractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9820D9811100A5D777 /* BindingExtractorSpec.swift */; };
 		CDF01C9B20D9824B00A5D777 /* Fakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01C9A20D9824B00A5D777 /* Fakes.swift */; };
+		CDF01CB020DCBBD400A5D777 /* DependencyRequestFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF01CAF20DCBBD400A5D777 /* DependencyRequestFactorySpec.swift */; };
 		DC798A8660C6789040C0F907 /* Pods_Stiletto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516F096072858C0B8D51046E /* Pods_Stiletto.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		CDF01C9A20D9824B00A5D777 /* Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakes.swift; sourceTree = "<group>"; };
 		CDF01CAC20DCB4BA00A5D777 /* AutoInit.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoInit.stencil; sourceTree = "<group>"; };
 		CDF01CAD20DCB4CB00A5D777 /* Stiletto.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Stiletto.swifttemplate; sourceTree = "<group>"; };
+		CDF01CAF20DCBBD400A5D777 /* DependencyRequestFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRequestFactorySpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				CDF01C9020D973FC00A5D777 /* BindingGraphFactorySpec.swift */,
 				CDF01C9820D9811100A5D777 /* BindingExtractorSpec.swift */,
 				CDF01C9A20D9824B00A5D777 /* Fakes.swift */,
+				CDF01CAF20DCBBD400A5D777 /* DependencyRequestFactorySpec.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -198,10 +201,10 @@
 		CDD9F50C20B85D1100FBB87F = {
 			isa = PBXGroup;
 			children = (
-				CDF01CAB20DCB4BA00A5D777 /* Templates */,
 				CDD9F51820B85D1100FBB87F /* Sources */,
-				CDD9F52320B85D1100FBB87F /* IntegrationTests */,
 				CD05755F20C3DD8600C6995B /* UnitTests */,
+				CDD9F52320B85D1100FBB87F /* IntegrationTests */,
+				CDF01CAB20DCB4BA00A5D777 /* Templates */,
 				CDD9F51720B85D1100FBB87F /* Products */,
 				373CCF53DF902A97F72E4791 /* Pods */,
 				2611C8DB79C0994E5529E78D /* Frameworks */,
@@ -581,6 +584,7 @@
 				CDA71ADE20CD7F9000603438 /* BindingKeyFactorySpec.swift in Sources */,
 				CDD72C9820D19A4600ED15AD /* ProvisionBindingSpec.swift in Sources */,
 				CDD72C9A20D19BCE00ED15AD /* ScopeParserSpec.swift in Sources */,
+				CDF01CB020DCBBD400A5D777 /* DependencyRequestFactorySpec.swift in Sources */,
 				CDD72C8E20D1855A00ED15AD /* BindingFactorySpec.swift in Sources */,
 				CDF01C9120D973FC00A5D777 /* BindingGraphFactorySpec.swift in Sources */,
 				CDD72C9D20D1A73900ED15AD /* GeneratedCode.swift in Sources */,

@@ -7,8 +7,8 @@ class ProvisionBindingSpec: QuickSpec {
     override func spec() {
         describe("dependencies") {
             it("is union of provision and member inejction dependencies") {
-                let fooDependency = DependencyRequest(key: BindingKey(type: Type(name: "Foo")), kind: .instance)
-                let barDependency = DependencyRequest(key: BindingKey(type: Type(name: "bar")), kind: .membersInjection)
+                let fooDependency = DependencyRequest(key: BindingKey(type: Type(name: "Foo")))
+                let barDependency = DependencyRequest(key: BindingKey(type: Type(name: "bar")))
                 let binding = ProvisionBinding(
                     requiresModuleInstance: true,
                     contributedType: Type(),

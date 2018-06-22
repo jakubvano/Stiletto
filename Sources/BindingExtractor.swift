@@ -10,10 +10,9 @@ final class BindingExtractorImpl: BindingExtractor {
     var bindingFactory: BindingFactory!
 
     func extractInjectionBindings(from type: Type) throws -> Set<ProvisionBinding> {
-        let bindings = try type.methods
+        return try Set(type.methods
             .filter { $0.isInjectable && $0.isStatic && $0.returnType == type }
             .map { try bindingFactory.makeInjectionBinding(for: type, with: $0) }
-
-        return Set(bindings)
+        )
     }
 }

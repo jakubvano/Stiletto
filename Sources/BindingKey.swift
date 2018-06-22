@@ -6,15 +6,16 @@ struct BindingKey: AutoHashable {
 
 // sourcery: AutoMockable
 protocol BindingKeyFactory {
-    func makeKey(for type: Type) throws -> BindingKey
+    func makeKey(forType type: Type) throws -> BindingKey
+    func makeKey(forVariable typed: Typed) throws -> BindingKey
 }
 
 final class BindingKeyFactoryImpl: BindingKeyFactory {
-    func makeKey(for type: Type) throws -> BindingKey {
+    func makeKey(forType type: Type) throws -> BindingKey {
         return BindingKey(type: type)
     }
 
-    func makeKey(for typed: Typed) throws -> BindingKey {
+    func makeKey(forVariable typed: Typed) throws -> BindingKey {
         if let type = typed.type {
             return BindingKey(type: type)
         } else {
