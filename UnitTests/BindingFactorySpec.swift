@@ -15,7 +15,7 @@ class BindingFactorySpec: QuickSpec {
             keyFactory = BindingKeyFactoryMock()
             keyFactory.makeKeyForReturnValue = BindingKey(type: Type())
             scopeParser = ScopeParserMock()
-            scopeParser.getScopeFromReturnValue = Protocol()
+            scopeParser.getScopeFromReturnValue = SourceryProtocol()
             dependencyFactory = DependencyFactoryMock()
             dependencyFactory.makeDependenciesFromReturnValue = Set()
             dependencyFactory.makeMemberDependenciesFromReturnValue = Set()
@@ -65,7 +65,7 @@ class BindingFactorySpec: QuickSpec {
             }
             describe("scope") {
                 it("gets scope using given scope parser") {
-                    scopeParser.getScopeFromReturnValue = Protocol(name: "Scope")
+                    scopeParser.getScopeFromReturnValue = SourceryProtocol(name: "Scope")
                     let binding = try? factory.makeInjectionBinding(for: makeType(), with: makeConstructor())
                     expect(binding?.scope) == scopeParser.getScopeFromReturnValue
                 }
@@ -117,6 +117,6 @@ private func makeType(name: String = "") -> Type {
     return Type(name: name)
 }
 
-private func makeConstructor(name: String = "") -> SourceryRuntime.Method {
+private func makeConstructor(name: String = "") -> SourceryMethod {
     return SourceryRuntime.Method(name: name)
 }

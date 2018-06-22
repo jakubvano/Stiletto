@@ -2,7 +2,7 @@ import SourceryRuntime
 
 // sourcery: AutoMockable
 protocol BindingFactory {
-    func makeInjectionBinding(for type: Type, with constructor: SourceryRuntime.Method) throws -> ProvisionBinding
+    func makeInjectionBinding(for type: Type, with constructor: SourceryMethod) throws -> ProvisionBinding
 }
 
 // sourcery: AutoInit
@@ -11,7 +11,7 @@ final class BindingFactoryImpl: BindingFactory {
     var scopeParser: ScopeParser!
     var dependencyFactory: DependencyFactory!
 
-    func makeInjectionBinding(for type: Type, with constructor: Method) throws -> ProvisionBinding {
+    func makeInjectionBinding(for type: Type, with constructor: SourceryMethod) throws -> ProvisionBinding {
         return ProvisionBinding(
             requiresModuleInstance: false,
             contributedType: type,

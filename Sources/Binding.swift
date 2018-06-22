@@ -4,7 +4,7 @@ protocol Binding {
     var key: BindingKey { get }
     var kind: BindingKind { get }
     var dependencies: Set<DependencyRequest> { get }
-    var scope: SourceryRuntime.`Protocol`? { get }
+    var scope: SourceryProtocol? { get }
 }
 
 enum BindingKind {
@@ -21,7 +21,7 @@ struct ProvisionBinding: ContributionBinding, AutoHashable {
     let contributedType: Type
     let key: BindingKey
     let kind: BindingKind
-    let scope: Protocol?
+    let scope: SourceryProtocol?
     let provisionDependencies: Set<DependencyRequest>
     let membersInjectionDependencies: Set<DependencyRequest>
 }

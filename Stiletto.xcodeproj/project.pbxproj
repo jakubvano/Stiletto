@@ -119,6 +119,8 @@
 		CDF01C9520D97F8700A5D777 /* SourceryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceryExtensions.swift; sourceTree = "<group>"; };
 		CDF01C9820D9811100A5D777 /* BindingExtractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtractorSpec.swift; sourceTree = "<group>"; };
 		CDF01C9A20D9824B00A5D777 /* Fakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakes.swift; sourceTree = "<group>"; };
+		CDF01CAC20DCB4BA00A5D777 /* AutoInit.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoInit.stencil; sourceTree = "<group>"; };
+		CDF01CAD20DCB4CB00A5D777 /* Stiletto.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Stiletto.swifttemplate; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		CDD9F50C20B85D1100FBB87F = {
 			isa = PBXGroup;
 			children = (
+				CDF01CAB20DCB4BA00A5D777 /* Templates */,
 				CDD9F51820B85D1100FBB87F /* Sources */,
 				CDD9F52320B85D1100FBB87F /* IntegrationTests */,
 				CD05755F20C3DD8600C6995B /* UnitTests */,
@@ -244,6 +247,15 @@
 			path = IntegrationTests;
 			sourceTree = "<group>";
 		};
+		CDF01CAB20DCB4BA00A5D777 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				CDF01CAC20DCB4BA00A5D777 /* AutoInit.stencil */,
+				CDF01CAD20DCB4CB00A5D777 /* Stiletto.swifttemplate */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -290,6 +302,7 @@
 				CDD9F51320B85D1100FBB87F /* Headers */,
 				CDD9F51420B85D1100FBB87F /* Resources */,
 				CD05756B20C3DF6B00C6995B /* SwiftLint */,
+				CDF01CAE20DCB4F800A5D777 /* Generate Template */,
 			);
 			buildRules = (
 			);
@@ -541,6 +554,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery --config IntegrationTests\n";
+		};
+		CDF01CAE20DCB4F800A5D777 /* Generate Template */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Template";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TEMPLATE=\"Templates/Stiletto.swifttemplate\"\nSOURCES=\"Sources/*.swift\"\n\necho \"// MARK: - Stiletto\" > $TEMPLATE\n\necho \"<% }}\" >> $TEMPLATE\nfor FILE in $SOURCES\ndo\n    cat $FILE >> $TEMPLATE\ndone\necho \"_ = {{ %>\" >> $TEMPLATE\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

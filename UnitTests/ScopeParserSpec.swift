@@ -23,7 +23,7 @@ class ScopeParserSpec: QuickSpec {
         }
         context("given type annotated with type not based on Scope") {
             it("returns nil") {
-                parser.types = Types(types: [Protocol(name: "FooScope")])
+                parser.types = Types(types: [SourceryProtocol(name: "FooScope")])
                 let type = makeType(annotations: ["FooScope"])
 
                 let result = try? parser.getScope(from: type)
@@ -49,7 +49,7 @@ class ScopeParserSpec: QuickSpec {
     }
 }
 
-private func makeScope(name: String) -> SourceryRuntime.`Protocol` {
+private func makeScope(name: String) -> SourceryProtocol {
     let scope = Protocol(name: name)
     scope.based = ["Scope": ""]
     return scope

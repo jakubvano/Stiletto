@@ -1,10 +1,6 @@
 sources:
   - .
 templates:
-  include:
-    - ../Templates
-  exclude:
-    - ../Templates/Partial/Factory.swifttemplate
-    - ../Templates/Partial/Component.swifttemplate
+    - ../Templates/Stiletto.swifttemplate
 output:
    GeneratedCode.swift

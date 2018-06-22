@@ -4,14 +4,14 @@ protocol Scope {}
 
 // sourcery: AutoMockable
 protocol ScopeParser {
-    func getScope(from type: Type) throws -> SourceryRuntime.`Protocol`?
+    func getScope(from type: Type) throws -> SourceryProtocol?
 }
 
 // sourcery: AutoInit
 final class ScopeParserImpl: ScopeParser {
     var types: Types!
 
-    func getScope(from type: Type) throws -> Protocol? {
+    func getScope(from type: Type) throws -> SourceryProtocol? {
         let scopes = types.protocols
             .filter { $0.based.keys.contains(String(describing: Scope.self)) }
             .filter { type.annotations.keys.contains($0.name) }
@@ -20,4 +20,8 @@ final class ScopeParserImpl: ScopeParser {
 
         return scopes.first
     }
+}
+
+func hello() {
+    print("Helloo world")
 }
